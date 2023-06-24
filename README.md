@@ -7,7 +7,7 @@
 Just a simple integration for [`@phosphor-icons`](https://github.com/phosphor-icons/vue) in Nuxt
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-- [🏀 Online playground](https://stackblitz.com/edit/nuxt-starter-nfr8mj?file=playground%2Fapp.vue)
+- [🏀 Online playground](https://stackblitz.com/edit/nuxt-phosphor-icons?file=playground%2Fapp.vue)
 - [📖 &nbsp;Documentation](https://phosphoricons.com)
 
 ## Features
