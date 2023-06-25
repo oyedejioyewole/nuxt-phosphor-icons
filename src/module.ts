@@ -55,7 +55,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     for (const { name, filePath, chunkName } of components) {
       addComponent({
-        name: `${name}`,
+        name,
         filePath: filePath,
         chunkName: chunkName,
       });
