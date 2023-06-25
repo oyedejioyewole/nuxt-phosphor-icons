@@ -1,9 +1,5 @@
 # Changelog
 
-## v1.0.0
-
-Initial commit 🎉
-
 ## v1.0.2
 
 [compare changes](https://undefined/undefined/compare/v1.0.1...v1.0.2)
@@ -28,3 +24,7 @@ Initial commit 🎉
 ### ❤️ Contributors
 
 - OyewoleOyedeji
+
+## v1.0.0
+
+Initial commit 🎉
