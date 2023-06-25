@@ -2,6 +2,19 @@
 
 Initial commit 🎉
 
+## v1.0.2
+
+[compare changes](https://undefined/undefined/compare/v1.0.1...v1.0.2)
+
+
+### 💅 Refactors
+
+  - **types:** Fixed module options (e168a17)
+
+### ❤️  Contributors
+
+- OyewoleOyedeji
+
 ## v1.0.1
 
 [compare changes](https://undefined/undefined/compare/v1.0.0...v1.0.1)
