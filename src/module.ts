@@ -4,7 +4,7 @@ import { join } from "path";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  prefix?: string;
+  prefix: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -16,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: { prefix: "PhosphorIcon" },
   async setup({ prefix }) {
     const { resolvePath } = createResolver(import.meta.url);
 
@@ -28,23 +28,19 @@ export default defineNuxtModule<ModuleOptions>({
       .map((file) => {
         let name = file.split(".")[0];
 
-        if (prefix) {
-          if (prefix.includes("-"))
-            name = name.replace(
-              "Ph",
-              prefix
-                .split("-")
-                .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-                .join("")
-            );
-          else
-            name = name.replace(
-              "Ph",
-              `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)}`
-            );
-        } else {
-          name = name.replace("Ph", "PhosphorIcon");
-        }
+        if (prefix.includes("-"))
+          name = name.replace(
+            "Ph",
+            prefix
+              .split("-")
+              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+              .join("")
+          );
+        else
+          name = name.replace(
+            "Ph",
+            `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)}`
+          );
 
         return {
           name,
