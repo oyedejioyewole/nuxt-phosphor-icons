@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.4
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.3...v1.0.4)
+
+
+### 📖 Documentation
+
+  - **changelog:** Fixed faulty links ([35f172d](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/35f172d))
+
+### ❤️  Contributors
+
+- OyewoleOyedeji
+
 ## v1.0.3
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.2...v1.0.3)
