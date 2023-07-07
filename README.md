@@ -46,10 +46,14 @@ That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
 ## Usage
 
-This is an example of how to use the module
+This module exposes a `<PhosphorIcon />` that you can use in your Nuxt app.
 
 ```vue
 <template>
+  <!-- This uses the defaults -->
+  <PhosphorIconAirplane />
+
+  <!-- This overrides the defaults -->
   <PhosphorIconAirplane size="40" color="green" />
 </template>
 ```
