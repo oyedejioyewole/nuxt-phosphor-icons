@@ -4,7 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Just a simple integration for [`@phosphor-icons`](https://github.com/phosphor-icons/vue) in Nuxt
+Just a simple integration for `phosphor-icons` in Nuxt
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 - [🏀 Online playground](https://stackblitz.com/edit/nuxt-phosphor-icons?file=playground%2Fapp.vue)
@@ -12,9 +12,7 @@ Just a simple integration for [`@phosphor-icons`](https://github.com/phosphor-ic
 
 ## Features
 
-- There is auto imports for components
-- There is also lazy loading for components
-- You can customize the prefix using for the component
+- A <`PhosphorIcon` /> component (the name can be changed) &mdash; this renders the icons
 
 ## Quick Setup
 
@@ -48,13 +46,15 @@ That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
 ## Usage
 
-THis is an example of how to use the module
+This is an example of how to use the module
 
 ```vue
 <template>
   <PhosphorIconAirplane size="40" color="green" />
 </template>
 ```
+
+### Note
 
 1. To find out more about props for the component, refer to <https://github.com/phosphor-icons/vue>
 2. To find the list of icons, refer to <https://phosphoricons.com>
@@ -63,26 +63,22 @@ THis is an example of how to use the module
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Generate type stubs
-npm run dev:prepare
+pnpm dev:prepare
 
 # Develop with the playground
-npm run dev
+pnpm dev
 
 # Build the playground
-npm run dev:build
+pnpm dev:build
 
 # Run ESLint
-npm run lint
-
-# Run Vitest
-npm run test
-npm run test:watch
+pnpm lint
 
 # Release new version
-npm run release
+pnpm release
 ```
 
 <!-- Badges -->
@@ -91,7 +87,5 @@ npm run release
 [npm-version-href]: https://npmjs.com/package/nuxt-phosphor-icons
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-phosphor-icons.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/nuxt-phosphor-icons
-[license-src]: https://img.shields.io/npm/l/nuxt-phosphor-icons.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-phosphor-icons
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
