@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.5
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.4...v1.0.5)
+
+### 📖 Documentation
+
+- **refactor:** Updated README ([59ad4dd](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/59ad4dd))
+- **refactor:** Rephrased contents under usage sub-heading ([f12b22b](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/f12b22b))
+
+### ❤️  Contributors
+
+- OyewoleOyedeji
+
 ## v1.0.4
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.3...v1.0.4)
