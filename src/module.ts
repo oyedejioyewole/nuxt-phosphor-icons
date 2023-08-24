@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addComponent } from "@nuxt/kit";
+import { addComponent, createResolver, defineNuxtModule } from "@nuxt/kit";
 import { readdirSync } from "fs";
 import { join } from "path";
 
@@ -23,37 +23,44 @@ export default defineNuxtModule<ModuleOptions>({
     const entrypoint = await resolvePath("@phosphor-icons/vue");
     const iconsPath = join(entrypoint, "../icons");
 
-    const components = readdirSync(iconsPath)
-      .filter((file) => file.endsWith(".vue.mjs"))
-      .map((file) => {
-        let name = file.split(".")[0];
+    const components = readdirSync(iconsPath).filter((file) =>
+      file.endsWith(".vue.mjs")
+    );
 
-        if (prefix.includes("-"))
-          name = name.replace(
-            "Ph",
-            prefix
-              .split("-")
-              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-              .join("")
-          );
-        else
-          name = name.replace(
-            "Ph",
-            `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)}`
-          );
+    const componentChunks = [] as Array<{
+      name: string;
+      filePath: string;
+      chunkName: string;
+    }>;
+    for (const component of components) {
+      let name = component.split(".")[0];
 
-        return {
-          name,
-          filePath: join(iconsPath, file),
-          chunkName: `phosphor-icons/${file.split(".")[0].toLowerCase()}`,
-        };
+      if (prefix.includes("-"))
+        name = name.replace(
+          "Ph",
+          prefix
+            .split("-")
+            .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+            .join("")
+        );
+      else
+        name = name.replace(
+          "Ph",
+          `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)}`
+        );
+
+      componentChunks.push({
+        name,
+        filePath: join(iconsPath, component),
+        chunkName: `phosphor-icons/${component.split(".")[0].toLowerCase()}`,
       });
+    }
 
-    for (const { name, filePath, chunkName } of components) {
+    for (const { name, filePath, chunkName } of componentChunks) {
       addComponent({
         name,
-        filePath: filePath,
-        chunkName: chunkName,
+        filePath,
+        chunkName,
       });
     }
   },

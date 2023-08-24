@@ -2,7 +2,7 @@
   <div
     style="display: flex; flex-direction: column; gap: 1rem; font-size: 20px"
   >
-    Just a normal Nuxt 3 project but with integrated @phosphor-icons e.g.
+    Just a normal Nuxt 3 project but with integrated @phosphor-icons
 
     <div style="display: flex; gap: 1rem">
       <PhosphorIconCheckCircle size="50" />
