@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.7
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.6...v1.0.7)
+
+### 🏡 Chore
+
+- **dependencies:** Bumped @phosphor-icons/vue to 2.1.6 ([ce5d7c1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/ce5d7c1))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.0.6
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.5...v1.0.6)
