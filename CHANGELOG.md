@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.8
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.7...v1.0.8)
+
+### 🏡 Chore
+
+- **dependencies:** Bumped @nuxt/kit to 3.7.4 ([af8aa60](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/af8aa60))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.0.7
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.6...v1.0.7)
