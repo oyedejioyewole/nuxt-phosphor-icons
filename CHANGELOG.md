@@ -1,5 +1,20 @@
 # Changelog
 
+## v1.0.9
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.8...v1.0.9)
+
+### 🏡 Chore
+
+- **devDependencies:** Bumped versions of ([7d303cd](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/7d303cd))
+- Test bundler module resolution ([66fbd9e](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/66fbd9e))
+- **dependencies:** Bumped @nuxt/kit to 3.9.0 ([1d5539f](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/1d5539f))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji 
+- Daniel Roe <daniel@roe.dev>
+
 ## v1.0.8
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.7...v1.0.8)
