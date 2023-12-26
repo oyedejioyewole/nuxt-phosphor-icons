@@ -1,7 +1,7 @@
 {
   "name": "nuxt-phosphor-icons",
   "version": "1.0.8",
-  "description": "Just a simple integration for phosphor-icons in Nuxt",
+  "description": "A simple wrapper for @phosphor-icons/vue in nuxt",
   "repository": "https://github.com/OyewoleOyedeji/nuxt-phosphor-icons.git",
   "license": "MIT",
   "type": "module",
@@ -18,25 +18,26 @@
     "dist"
   ],
   "scripts": {
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi generate playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "lint": "eslint . --fix",
-    "prepack": "nuxt-module-build",
+    "playground:build": "pnpm --filter playground build",
+    "playground:dev": "pnpm --filter playground dev",
+    "playground:generate": "pnpm --filter playground generate",
+    "prepack": "nuxt-module-build build",
+    "prepare": "nuxt-module-build build --stub && nuxi prepare playground",
     "release": "npm run lint && npm run prepack && changelogen --release && git push --follow-tags"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.7.4",
+    "@nuxt/kit": "^3.9.0",
     "@phosphor-icons/vue": "^2.1.6"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.0.0",
+    "@nuxt/devtools": "1.0.6",
     "@nuxt/eslint-config": "^0.2.0",
-    "@nuxt/module-builder": "^0.5.2",
-    "@nuxt/schema": "^3.7.4",
-    "@types/node": "^20.8.7",
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.9.0",
+    "@types/node": "^20.10.5",
     "changelogen": "^0.5.5",
-    "eslint": "^8.51.0",
-    "nuxt": "^3.7.4"
+    "eslint": "^8.56.0",
+    "nuxt": "^3.9.0"
   }
 }

@@ -1,8 +1,9 @@
 {
   "private": true,
-  "name": "nuxt-phosphor-playground",
+  "name": "playground",
   "type": "module",
   "scripts": {
+    "build": "nuxi build",
     "dev": "nuxi dev",
     "generate": "nuxi generate"
   },
