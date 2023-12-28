@@ -22,6 +22,11 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
   ],
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+    },
+  },
   phosphor: {
     options: {
       components: {
