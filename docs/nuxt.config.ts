@@ -15,8 +15,8 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "../src/module",
     "floating-vue/nuxt",
+    "nuxt-phosphor-icons",
     "@formkit/auto-animate/nuxt",
     "@nuxt/content",
     "@nuxtjs/google-fonts",
