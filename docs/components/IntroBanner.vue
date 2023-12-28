@@ -9,11 +9,15 @@ for (let index = 0; index < 4; index++) {
   icons.value.push(icon);
 }
 
-setInterval(() => {
-  icons.value = Array.from(
+setInterval(async () => {
+  const newIcons = Array.from(
     { length: 4 },
     () => `${iconList[Math.floor(Math.random() * iconList.length)]}`,
   );
+
+  await prefetchComponents(newIcons);
+
+  icons.value = newIcons;
 }, 5000);
 
 watch(isCodeCopied, (_new) => {
@@ -39,16 +43,16 @@ const copyToClipboard = async (event: Event) => {
     <div
       class="will-change-content grid grid-cols-4 place-items-center gap-x-4"
     >
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20">
+      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
         <component :is="icons[0]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20">
+      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
         <component :is="icons[1]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20">
+      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
         <component :is="icons[2]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20">
+      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
         <component :is="icons[3]" size="50" />
       </div>
     </div>
@@ -57,10 +61,10 @@ const copyToClipboard = async (event: Event) => {
     <div class="flex justify-between">
       <button
         class="flex w-3/4 items-center justify-center gap-x-4 rounded-lg bg-primary-500 py-3 text-copy-900"
-        v-tooltip="isCodeCopied ? 'Copied' : 'Copy'"
         @click="copyToClipboard"
       >
-        <LazyPhosphorIconCode size="25" />
+        <LazyPhosphorIconCode size="25" v-if="!isCodeCopied" />
+        <LazyPhosphorIconCheck size="25" v-else />
         <code>pnpm add -D nuxt-phosphor-icons</code>
       </button>
 
