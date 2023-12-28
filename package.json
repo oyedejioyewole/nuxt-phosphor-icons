@@ -19,12 +19,15 @@
   ],
   "scripts": {
     "lint": "eslint . --fix",
+    "docs:build": "pnpm --filter docs build",
+    "docs:dev": "pnpm --filter docs dev",
+    "docs:generate": "pnpm --filter docs generate",
     "playground:build": "pnpm --filter playground build",
     "playground:dev": "pnpm --filter playground dev",
     "playground:generate": "pnpm --filter playground generate",
     "prepack": "nuxt-module-build build",
-    "prepare": "nuxt-module-build build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run prepack && changelogen --release && git push --follow-tags"
+    "prepare": "nuxt-module-build build --stub",
+    "release": "pnpm lint && pnpm prepack && changelogen --release && git push --follow-tags"
   },
   "dependencies": {
     "@nuxt/kit": "^3.9.0",
