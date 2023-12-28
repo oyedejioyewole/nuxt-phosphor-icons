@@ -6,9 +6,9 @@
 
 Just a simple integration for `phosphor-icons` in Nuxt
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
+- [✨ &nbsp;Release Notes](https://nuxt-phosphor-icons.vercel.app/release-notes)
 - [🏀 Online playground](https://stackblitz.com/edit/nuxt-phosphor-icons?file=playground%2Fapp.vue)
-- [📖 &nbsp;Documentation](https://phosphoricons.com)
+- [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
 
 ## Features
 
