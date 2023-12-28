@@ -19,8 +19,8 @@
   ],
   "scripts": {
     "lint": "eslint . --fix",
+    "docs:build": "pnpm --filter docs build",
     "docs:dev": "pnpm --filter docs dev",
-    "docs:generate": "pnpm --filter docs generate",
     "playground:build": "pnpm --filter playground build",
     "playground:dev": "pnpm --filter playground dev",
     "playground:generate": "pnpm --filter playground generate",
