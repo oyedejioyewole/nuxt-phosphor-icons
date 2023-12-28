@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
   ],
   phosphor: {
     options: {

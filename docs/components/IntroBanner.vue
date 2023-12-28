@@ -2,34 +2,35 @@
 import iconList from "#build/nuxt-phosphor-icons.mjs";
 
 const icons = ref<string[]>([]);
-const isCodeCopied = ref(false);
+const { copied, copy } = useClipboard({ legacy: true });
 
-for (let index = 0; index < 4; index++) {
-  const icon = `${iconList[Math.floor(Math.random() * iconList.length)]}`;
-  icons.value.push(icon);
-}
+icons.value = generateIconNames();
 
-setInterval(async () => {
-  const newIcons = Array.from(
-    { length: 4 },
-    () => `${iconList[Math.floor(Math.random() * iconList.length)]}`,
-  );
+useIntervalFn(async () => {
+  const newIcons = generateIconNames();
 
   await prefetchComponents(newIcons);
 
   icons.value = newIcons;
 }, 5000);
 
-watch(isCodeCopied, (_new) => {
-  if (_new) setTimeout(() => (isCodeCopied.value = false), 3000);
-});
+function generateIconNames() {
+  const generatedIcons = [] as string[];
 
-const copyToClipboard = async (event: Event) => {
-  const codeElement = event.target as HTMLElement;
-  await navigator.clipboard.writeText(codeElement.innerText);
+  for (let index = 0; index < 4; index++) {
+    const icon = `${iconList[Math.floor(Math.random() * iconList.length)]}`;
 
-  isCodeCopied.value = true;
-};
+    // Prevent duplicate icons
+    if (generatedIcons.includes(icon)) {
+      index--;
+      continue;
+    }
+
+    generatedIcons.push(icon);
+  }
+
+  return generatedIcons;
+}
 </script>
 
 <template>
@@ -61,9 +62,9 @@ const copyToClipboard = async (event: Event) => {
     <div class="flex justify-between">
       <button
         class="flex w-3/4 items-center justify-center gap-x-4 rounded-lg bg-primary-500 py-3 text-copy-900"
-        @click="copyToClipboard"
+        @click="copy(($event.target as HTMLElement).innerText)"
       >
-        <LazyPhosphorIconCode size="25" v-if="!isCodeCopied" />
+        <LazyPhosphorIconCode size="25" v-if="!copied" />
         <LazyPhosphorIconCheck size="25" v-else />
         <code>pnpm add -D nuxt-phosphor-icons</code>
       </button>

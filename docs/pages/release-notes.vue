@@ -9,13 +9,14 @@
     </div>
     <LazyContentDoc
       class="mx-auto min-h-screen w-1/2 space-y-8"
-      id="changelog"
+      id="release-notes"
+      path="/release-notes"
     />
   </main>
 </template>
 
 <style lang="scss">
-#changelog {
+#release-notes {
   a {
     @apply text-accent-500 hover:underline;
   }

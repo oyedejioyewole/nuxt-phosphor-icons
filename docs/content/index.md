@@ -42,6 +42,16 @@ You can configure the module using the `phosphor` key in the `nuxt.config.ts`
 2. **Description:** What should be prefixed to the icon components
 3. **Type:** `String` or `Boolean`
 
+```ts
+export default defineNuxtConfig({
+  phosphor: {
+    prefix: "your-prefix", // <YourPrefix.IconName />
+  },
+});
+```
+
+**PS:** Please ignore the `.`
+
 **Note:** When using type `Boolean`, if set to `true` the prefix would be the default value, otherwise if set to `false` there won't be a prefix.
 
 Also note, if you have a multi word prefix, you should include a dash (-) between the words
@@ -52,9 +62,19 @@ Also note, if you have a multi word prefix, you should include a dash (-) betwee
 
 1. **Default:** `{}`
 2. **Description:** Options to pass to the `@phosphor-icons/vue` module
-3. **Children:**
 
-   - `options.components`
+```ts
+export default defineNuxtConfig({
+  phosphor: {
+    options: {
+      components: {
+        expose: true,
+        showList: false,
+      },
+    },
+  },
+});
+```
 
 <br>
 
@@ -63,10 +83,6 @@ Also note, if you have a multi word prefix, you should include a dash (-) betwee
 1. **Default:** `{}`
 2. **Description:** Configure how the components are registered
 3. **Type:** `Object`
-4. **Children:**
-
-   - `options.components.expose`
-   - `options.components.showList`
 
 <br>
 

@@ -4,6 +4,7 @@
     <LazyContentDoc
       class="mx-auto min-h-screen w-1/2 space-y-8 py-20"
       id="documentation"
+      path="/"
     />
   </main>
 </template>
