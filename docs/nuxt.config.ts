@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   content: {
+    defaultLocale: "en-US",
     highlight: {
       theme: "one-dark-pro",
       preload: ["bash", "ts"],
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "floating-vue/nuxt",
+    "nuxt-og-image",
     "nuxt-phosphor-icons",
     "@formkit/auto-animate/nuxt",
     "@nuxt/content",
@@ -32,6 +34,9 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/**": { isr: true },
+  },
+  site: {
+    url: "https://nuxt-phosphor-icons.vercel.app",
   },
   typescript: {
     shim: false,

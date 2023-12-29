@@ -1,3 +1,8 @@
+---
+title: Documentation · nuxt-phosphor-icons
+description: A simple wrapper for @phosphor-icons/vue in Nuxt
+---
+
 # Documentation
 
 If you are reading this, I want to take a moment to thank you for trying out this module 😅

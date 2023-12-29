@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+defineOgImageComponent(
+  "Page",
+  {
+    title: "Documentation",
+    description: "A simple wrapper for @phosphor-icons/vue in Nuxt",
+  },
+  { fonts: ["Lora:700", "Open Sans:400"] },
+);
+</script>
+
 <template>
   <main>
     <IntroBanner />

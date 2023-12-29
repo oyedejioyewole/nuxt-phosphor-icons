@@ -4,6 +4,6 @@
 
 <style lang="scss">
 body {
-  @apply bg-background-100;
+  @apply bg-accent-100;
 }
 </style>
