@@ -24,7 +24,7 @@
 
 ### ❤️ Contributors
 
-- OyewoleOyedeji 
+- OyewoleOyedeji
 - Daniel Roe <daniel@roe.dev>
 
 ## v1.0.8
@@ -64,7 +64,7 @@
 - **refactor:** Updated README ([59ad4dd](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/59ad4dd))
 - **refactor:** Rephrased contents under usage sub-heading ([f12b22b](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/f12b22b))
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - OyewoleOyedeji
 
@@ -72,12 +72,11 @@
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.0.3...v1.0.4)
 
-
 ### 📖 Documentation
 
-  - **changelog:** Fixed faulty links ([35f172d](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/35f172d))
+- **changelog:** Fixed faulty links ([35f172d](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/35f172d))
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - OyewoleOyedeji
 

@@ -85,7 +85,7 @@ function generateIconNames() {
 
       <NuxtLink
         class="flex w-full items-center justify-center gap-x-2 rounded-full border border-secondary-500 p-3 text-secondary-500 transition hover:bg-secondary-500 hover:text-copy-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
-        to="/release-notes"
+        to="/changelog"
         >Release Notes <LazyPhosphorIconArrowRight size="20"
       /></NuxtLink>
     </div>

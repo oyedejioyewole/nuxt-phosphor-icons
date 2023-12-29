@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+defineOgImageComponent(
+  "Page",
+  {
+    title: "Changelog",
+    description: "A simple wrapper for @phosphor-icons/vue in Nuxt",
+  },
+  { fonts: ["Lora:700", "Open Sans:400"] },
+);
+</script>
+
 <template>
   <main class="space-y-20 py-20">
     <div class="mx-auto w-[90%] lg:w-3/4">
@@ -9,14 +20,14 @@
     </div>
     <ContentDoc
       class="mx-auto min-h-screen w-[90%] space-y-8 lg:w-1/2"
-      id="release-notes"
-      path="/release-notes"
+      id="changelog"
+      path="/changelog"
     />
   </main>
 </template>
 
 <style lang="scss">
-#release-notes {
+#changelog {
   a {
     @apply text-accent-500 hover:underline;
   }
