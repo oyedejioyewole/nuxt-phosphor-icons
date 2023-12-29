@@ -1,8 +1,8 @@
 <template>
   <main>
-    <LazyIntroBanner />
-    <LazyContentDoc
-      class="mx-auto min-h-screen w-1/2 space-y-8 py-20"
+    <IntroBanner />
+    <ContentDoc
+      class="mx-auto min-h-screen w-[90%] space-y-8 py-20 lg:w-1/2"
       id="documentation"
       path="/"
     />
@@ -20,19 +20,19 @@
     }
   }
   h1 {
-    @apply font-serif text-6xl text-copy-900;
+    @apply font-serif text-4xl text-copy-900 lg:text-6xl;
   }
 
   h2 {
-    @apply text-4xl;
+    @apply text-3xl lg:text-4xl;
   }
 
   h3 {
-    @apply text-3xl;
+    @apply text-2xl lg:text-3xl;
   }
 
   h4 {
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold lg:text-2xl;
 
     code {
       @apply rounded-lg bg-accent-500 p-3;
@@ -56,11 +56,11 @@
   }
 
   p {
-    @apply text-balance  text-lg leading-loose tracking-wide text-accent-900;
+    @apply text-pretty text-lg leading-loose tracking-wide text-accent-900;
   }
 
   pre {
-    @apply rounded-lg bg-accent-900 p-7 text-sm;
+    @apply overflow-x-scroll rounded-lg bg-accent-900 p-5 text-sm lg:p-7;
 
     code {
       @apply rounded-none bg-transparent;

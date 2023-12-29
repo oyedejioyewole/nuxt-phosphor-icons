@@ -34,34 +34,48 @@ function generateIconNames() {
 </script>
 
 <template>
-  <header class="grid h-screen place-content-center gap-y-20">
-    <h1 class="text-center font-serif text-7xl text-copy-900">
+  <header
+    class="mx-auto grid h-screen w-[90%] place-content-center gap-y-20 lg:w-3/4"
+  >
+    <h1 class="text-center font-serif text-5xl text-copy-900 lg:text-7xl">
       <span class="text-secondary-500">Phosphor Icons</span> meets
       <span class="text-primary-500">Nuxt</span>
     </h1>
 
     <!-- Icon grid -->
     <div
-      class="will-change-content grid grid-cols-4 place-items-center gap-x-4"
+      class="will-change-content grid grid-cols-2 place-items-center gap-4 lg:grid-cols-4 lg:gap-x-4"
     >
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
+      <div
+        class="rounded-lg bg-accent-500 bg-opacity-20 p-10 lg:p-20"
+        v-auto-animate
+      >
         <component :is="icons[0]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
+      <div
+        class="rounded-lg bg-accent-500 bg-opacity-20 p-10 lg:p-20"
+        v-auto-animate
+      >
         <component :is="icons[1]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
+      <div
+        class="rounded-lg bg-accent-500 bg-opacity-20 p-10 lg:p-20"
+        v-auto-animate
+      >
         <component :is="icons[2]" size="50" />
       </div>
-      <div class="rounded-lg bg-accent-500 bg-opacity-20 p-20" v-auto-animate>
+      <div
+        class="rounded-lg bg-accent-500 bg-opacity-20 p-10 lg:p-20"
+        v-auto-animate
+      >
         <component :is="icons[3]" size="50" />
       </div>
     </div>
 
     <!-- Try now -->
-    <div class="flex justify-between">
+    <div class="flex flex-col justify-between gap-y-4 lg:flex-row">
       <button
-        class="flex w-3/4 items-center justify-center gap-x-4 rounded-lg bg-primary-500 py-3 text-copy-900"
+        class="flex w-full items-center justify-center gap-x-2 rounded-lg bg-primary-500 py-3 text-sm text-copy-900 lg:w-3/4 lg:gap-x-4"
         @click="copy(($event.target as HTMLElement).innerText)"
       >
         <LazyPhosphorIconCode size="25" v-if="!copied" />
@@ -70,8 +84,8 @@ function generateIconNames() {
       </button>
 
       <NuxtLink
+        class="flex w-full items-center justify-center gap-x-2 rounded-full border border-secondary-500 p-3 text-secondary-500 transition hover:bg-secondary-500 hover:text-copy-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
         to="/release-notes"
-        class="flex w-[200px] items-center justify-around rounded-full border border-secondary-500 p-3 text-secondary-500 transition hover:bg-secondary-500 hover:text-copy-900"
         >Release Notes <LazyPhosphorIconArrowRight size="20"
       /></NuxtLink>
     </div>
