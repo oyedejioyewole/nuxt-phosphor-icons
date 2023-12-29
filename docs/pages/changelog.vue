@@ -3,7 +3,7 @@ defineOgImageComponent(
   "Page",
   {
     title: "Changelog",
-    description: "A simple wrapper for @phosphor-icons/vue in Nuxt",
+    description: "Release notes",
   },
   { fonts: ["Lora:700", "Open Sans:400"] },
 );
