@@ -6,83 +6,77 @@
 
 Just a simple integration for `phosphor-icons` in Nuxt
 
-- [✨ &nbsp;Release Notes](https://nuxt-phosphor-icons.vercel.app/release-notes)
+- [✨ &nbsp;Changelog](https://nuxt-phosphor-icons.vercel.app/changelog)
 - [🏀 Online playground](https://stackblitz.com/edit/nuxt-phosphor-icons?file=playground%2Fapp.vue)
 - [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
-
-## Features
-
-- A <`PhosphorIcon` /> component (the name can be changed) &mdash; this renders the icons
 
 ## Quick Setup
 
 1. Add `nuxt-phosphor-icons` dependency to your project
 
-```bash
-# Using pnpm
-pnpm add -D nuxt-phosphor-icons
+   ```bash
+   # Using pnpm
+   pnpm add -D nuxt-phosphor-icons
 
-# Using yarn
-yarn add --dev nuxt-phosphor-icons
+   # Using yarn
+   yarn add --dev nuxt-phosphor-icons
 
-# Using npm
-npm install --save-dev nuxt-phosphor-icons
-```
+   # Using npm
+   npm install --save-dev nuxt-phosphor-icons
+   ```
 
 2. Add `nuxt-phosphor-icons` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: ["nuxt-phosphor-icons"],
-
-  // Optionally change the default prefix - PhosphorIcon
-  phosphor: {
-    prefix: "your-prefix",
-  },
 });
 ```
 
 That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
-## Usage
+## Resources
 
-This module exposes a `<PhosphorIcon />` that you can use in your Nuxt app.
+**Documentation**: <https://nuxt-phosphor-icons.vercel.app>
 
-```vue
-<template>
-  <!-- This uses the defaults -->
-  <PhosphorIconAirplane />
+**Icons**:
 
-  <!-- This overrides the defaults -->
-  <PhosphorIconAirplane size="40" color="green" />
-</template>
-```
+1. <https://phosphoricons.com>
+2. <https://github.com/phosphor-icons/vue>
 
-### Note
-
-1. To find out more about props for the component, refer to <https://github.com/phosphor-icons/vue>
-2. To find the list of icons, refer to <https://phosphoricons.com>
-
-## Development
+## Development (Module)
 
 ```bash
-# Install dependencies
-pnpm install
+# Install dependencies (on all workspaces)
+$ pnpm install
 
-# Generate type stubs
-pnpm dev:prepare
+# === (docs) commands ===
 
-# Develop with the playground
-pnpm dev
+# Start development server (docs/)
+pnpm docs:dev
 
-# Build the playground
-pnpm dev:build
+# Build docs/
+pnpm docs:build
+
+# === (playground) commands ===
+
+# Start development server (playground/)
+$ pnpm playground:dev
+
+# Build playground/
+$ pnpm playground:build
 
 # Run ESLint
-pnpm lint
+$ pnpm lint
 
-# Release new version
-pnpm release
+# Release new version (major)
+$ pnpm release:major
+
+# Release new version (minor)
+$ pnpm release:minor
+
+# Release new version (patch)
+$ pnpm release:patch
 ```
 
 <!-- Badges -->
