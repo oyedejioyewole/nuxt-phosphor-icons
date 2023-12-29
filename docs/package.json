@@ -19,7 +19,6 @@
     "nuxt": "^3.9.0",
     "nuxt-og-image": "3.0.0-rc.12",
     "nuxt-phosphor-icons": "workspace:^",
-    "playwright": "^1.40.1",
     "sass": "^1.69.5",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
