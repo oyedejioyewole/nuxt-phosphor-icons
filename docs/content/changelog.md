@@ -1,3 +1,8 @@
+---
+title: Changelog · nuxt-phosphor-icons
+description: Release notes for nuxt-phosphor-icons
+---
+
 # Changelog
 
 ## v1.1.0
