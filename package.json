@@ -43,5 +43,8 @@
     "changelogen": "^0.5.5",
     "eslint": "^8.56.0",
     "nuxt": "^3.9.0"
-  }
+  },
+  "workspaces": [
+    "pnpm@8.13.1"
+  ]
 }
