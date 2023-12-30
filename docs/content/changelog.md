@@ -5,6 +5,24 @@ description: Release notes for nuxt-phosphor-icons
 
 # Changelog
 
+## v1.1.2
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.1...v1.1.2)
+
+### 🩹 Fixes
+
+- **package:** Attempt  at fixing issue #7 ([#1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/1), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
+- **package:** Attempt  at fixing issue #7 ([#2](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/2), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
+
+### 🏡 Chore
+
+- **release:** V1.1.1 ([47b2de9](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/47b2de9))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji 
+- Oyedeji Oyewole
+
 ## v1.1.1
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.0...v1.1.1)
