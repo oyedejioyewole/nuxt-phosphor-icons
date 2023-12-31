@@ -21,6 +21,14 @@ defineOgImageComponent(
 
 <style lang="scss">
 #documentation {
+  a {
+    @apply text-accent-500 hover:underline;
+  }
+
+  code {
+    @apply rounded-lg bg-accent-500 px-3 py-1 text-sm;
+  }
+
   h1,
   h2,
   h3,
@@ -53,20 +61,12 @@ defineOgImageComponent(
     @apply list-inside list-decimal space-y-8 text-lg;
 
     li {
-      @apply space-y-4;
-    }
-  }
-
-  ul {
-    @apply list-inside list-disc space-y-8 text-lg;
-
-    li {
-      @apply space-y-4;
+      @apply space-y-4 text-copy-900;
     }
   }
 
   p {
-    @apply text-pretty text-lg leading-loose tracking-wide text-accent-900;
+    @apply text-pretty text-lg leading-loose tracking-wide text-copy-900;
   }
 
   pre {
@@ -77,12 +77,12 @@ defineOgImageComponent(
     }
   }
 
-  code {
-    @apply rounded-lg bg-accent-500 px-3 py-1 text-sm;
-  }
+  ul {
+    @apply list-inside list-disc space-y-8 text-lg;
 
-  a {
-    @apply text-accent-500 hover:underline;
+    li {
+      @apply space-y-4 text-copy-900;
+    }
   }
 }
 </style>
