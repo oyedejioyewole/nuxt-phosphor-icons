@@ -1,6 +1,6 @@
 {
   "name": "nuxt-phosphor-icons",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A simple wrapper for @phosphor-icons/vue in nuxt",
   "repository": {
     "type": "git",
@@ -22,13 +22,13 @@
   ],
   "scripts": {
     "lint": "eslint . --fix",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
     "docs:build": "pnpm --filter docs build",
     "docs:dev": "pnpm --filter docs dev",
     "playground:build": "pnpm --filter playground build",
     "playground:dev": "pnpm --filter playground dev",
     "playground:generate": "pnpm --filter playground generate",
     "prepack": "nuxt-module-build build",
-    "prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
     "release:major": "pnpm lint && pnpm prepack && changelogen --release --major --output docs/content/changelog.md && git push --follow-tags",
     "release:minor": "pnpm lint && pnpm prepack && changelogen --release --minor --output docs/content/changelog.md && git push --follow-tags",
     "release:patch": "pnpm lint && pnpm prepack && changelogen --release --patch --output docs/content/changelog.md && git push --follow-tags"
