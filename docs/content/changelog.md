@@ -5,6 +5,10 @@ description: Release notes for nuxt-phosphor-icons
 
 # Changelog
 
+## v1.1.4
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.3...v1.1.4)
+
 ## v1.1.3
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.2...v1.1.3)
