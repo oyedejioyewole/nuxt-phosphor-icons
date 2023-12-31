@@ -23,8 +23,8 @@ description: Release notes for nuxt-phosphor-icons
 
 ### 🩹 Fixes
 
-- **package:** Attempt  at fixing issue #7 ([#1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/1), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
-- **package:** Attempt  at fixing issue #7 ([#2](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/2), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
+- **package:** Attempt at fixing issue #7 ([#1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/1), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
+- **package:** Attempt at fixing issue #7 ([#2](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/2), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
 
 ### 🏡 Chore
 
@@ -32,7 +32,7 @@ description: Release notes for nuxt-phosphor-icons
 
 ### ❤️ Contributors
 
-- OyewoleOyedeji 
+- OyewoleOyedeji
 - Oyedeji Oyewole
 
 ## v1.1.1
@@ -43,7 +43,7 @@ description: Release notes for nuxt-phosphor-icons
 
 - **docs:** Fixed jankiness in the loading of icons in intro banner ([f70544f](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/f70544f))
 - **docs:** Fixed <ContentDoc /> issue on /release-notes (now /changelog) ([0e91645](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/0e91645))
-- **package:** Attempt  at fixing issue #7 ([#1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/1), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
+- **package:** Attempt at fixing issue #7 ([#1](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/pull/1), [#7](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/issues/7))
 
 ### 💅 Refactors
 
@@ -65,7 +65,7 @@ description: Release notes for nuxt-phosphor-icons
 
 ### ❤️ Contributors
 
-- Oyedeji Oyewole 
+- Oyedeji Oyewole
 - OyewoleOyedeji
 
 ## v1.1.0

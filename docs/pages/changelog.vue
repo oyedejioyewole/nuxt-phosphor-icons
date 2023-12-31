@@ -21,7 +21,6 @@ defineOgImageComponent(
     <ContentDoc
       class="mx-auto min-h-screen w-[90%] space-y-8 lg:w-1/2"
       id="changelog"
-      path="/changelog"
     />
   </main>
 </template>
