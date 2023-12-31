@@ -15,6 +15,7 @@ defineOgImageComponent(
     <ContentDoc
       class="mx-auto min-h-screen w-[90%] space-y-8 py-20 lg:w-1/2"
       id="documentation"
+      path="/"
     />
   </main>
 </template>
