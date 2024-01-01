@@ -38,7 +38,7 @@ function generateIconNames() {
     class="mx-auto grid h-screen w-[90%] place-content-center gap-y-20 lg:w-3/4"
   >
     <h1 class="text-center font-serif text-5xl text-copy-900 lg:text-7xl">
-      <span class="text-secondary-500">Phosphor Icons</span> meets
+      <span class="text-accent-500">Phosphor Icons</span> meets
       <span class="text-primary-500">Nuxt</span>
     </h1>
 
@@ -84,7 +84,7 @@ function generateIconNames() {
       </button>
 
       <NuxtLink
-        class="flex w-full items-center justify-center gap-x-2 rounded-full border border-secondary-500 p-3 text-secondary-500 transition hover:bg-secondary-500 hover:text-copy-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
+        class="flex w-full items-center justify-center gap-x-2 rounded-full border border-accent-500 p-3 text-accent-500 transition hover:bg-accent-500 hover:text-copy-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
         to="/release-notes"
         >Release Notes <LazyPhosphorIconArrowRight size="20"
       /></NuxtLink>

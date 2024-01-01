@@ -3,26 +3,20 @@ defineOgImageComponent(
   "Page",
   {
     title: "Release Notes",
-    description: "Release notes",
+    description: "Don't miss out on improvements and new features",
   },
   { fonts: ["Lora:700", "Open Sans:400"] },
 );
 </script>
 
 <template>
-  <main class="space-y-20 py-20">
-    <div class="mx-auto w-[90%] lg:w-3/4">
-      <NuxtLink
-        to="/"
-        class="flex w-fit items-center gap-x-1 rounded-full border border-secondary-500 p-3 text-secondary-500 transition hover:bg-secondary-500 hover:text-copy-900"
-        ><LazyPhosphorIconArrowLeft size="20" /> Go back</NuxtLink
-      >
-    </div>
-    <ContentDoc
-      class="mx-auto min-h-screen w-[90%] space-y-8 lg:w-1/2"
-      id="release-notes"
-      path="/release-notes"
-    />
+  <main class="mx-auto min-h-screen w-[90%] space-y-20 py-20 lg:w-1/2">
+    <NuxtLink
+      to="/"
+      class="flex w-fit items-center gap-x-1 rounded-full border border-accent-500 p-3 text-accent-500 transition hover:bg-accent-500 hover:text-copy-900"
+      ><LazyPhosphorIconArrowLeft size="20" /> Go back</NuxtLink
+    >
+    <ContentDoc class="space-y-8" id="release-notes" path="/release-notes" />
   </main>
 </template>
 
@@ -30,6 +24,10 @@ defineOgImageComponent(
 #release-notes {
   a {
     @apply text-accent-500 hover:underline;
+  }
+
+  code {
+    @apply rounded-lg bg-accent-500 px-3 py-1 text-sm;
   }
 
   h1,
@@ -50,6 +48,10 @@ defineOgImageComponent(
 
   h3 {
     @apply text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl font-bold lg:text-2xl;
   }
 
   p {
