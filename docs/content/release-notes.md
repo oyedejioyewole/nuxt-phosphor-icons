@@ -13,6 +13,10 @@ description: Release notes for nuxt-phosphor-icons
 
 - Added jsdoc comments to module ([9fa48d4](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/9fa48d4))
 
+#### ⁉️ Breaking Changes
+
+- Removed the `options` key from `nuxt.config`. You should use `expose` and `showList` keys directly in the root!
+
 ### 💅 Refactors
 
 - Moved prepare script to postinstall script ([cbe369a](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/cbe369a))

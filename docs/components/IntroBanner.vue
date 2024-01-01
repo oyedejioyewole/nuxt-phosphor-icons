@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import iconList from "#build/nuxt-phosphor-icons.mjs";
+import iconList from "#build/nuxt-phosphor-icons.json";
 
 const icons = ref<string[]>([]);
 const { copied, copy } = useClipboard({ legacy: true });
