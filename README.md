@@ -4,10 +4,10 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Just a simple integration for `phosphor-icons` in Nuxt
+Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nuxt](https://nuxt.com)
 
-- [✨ &nbsp;Changelog](https://nuxt-phosphor-icons.vercel.app/changelog)
-- [🏀 Online playground](https://stackblitz.com/edit/nuxt-phosphor-icons?file=playground%2Fapp.vue)
+- [📜 &nbsp;Changelog](https://nuxt-phosphor-icons.vercel.app/changelog)
+- [🏀 Online playground](https://codesandbox.io/p/github/OyewoleOyedeji/nuxt-phosphor-icons/main?embed=1&file=%2Fplayground%2Fapp.vue&showConsole=true)
 - [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
 
 ## Quick Setup
@@ -37,47 +37,32 @@ That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
 ## Resources
 
-**Documentation**: <https://nuxt-phosphor-icons.vercel.app>
+1. **Documentation**: <https://nuxt-phosphor-icons.vercel.app>
+2. **Phosphor Icons**: <https://phosphoricons.com>
 
-**Icons**:
+## Contributing
 
-1. <https://phosphoricons.com>
-2. <https://github.com/phosphor-icons/vue>
+You can contribute to this module with CodeSandbox:
 
-## Development (Module)
+[![Edit OyewoleOyedeji/nuxt-phosphor-icons/main][playground-src]][playground-href]
 
-```bash
-# Install dependencies (on all workspaces)
-$ pnpm install
+or locally for either
 
-# === (docs) commands ===
+### Documentation
 
-# Start development server (docs/)
-pnpm docs:dev
+1. Clone the repository
+2. Install dependencies with `pnpm install`
+3. Run development server with `pnpm docs:dev`
 
-# Build docs/
-pnpm docs:build
+**Note:** Hosted on Vercel
 
-# === (playground) commands ===
+[![Deploy with Vercel][vercel-src]][vercel-href]
 
-# Start development server (playground/)
-$ pnpm playground:dev
+### Playground
 
-# Build playground/
-$ pnpm playground:build
-
-# Run ESLint
-$ pnpm lint
-
-# Release new version (major)
-$ pnpm release:major
-
-# Release new version (minor)
-$ pnpm release:minor
-
-# Release new version (patch)
-$ pnpm release:patch
-```
+1. Clone the repository
+2. Install dependencies with `pnpm install`
+3. Run development server with `pnpm playground:dev`
 
 <!-- Badges -->
 
@@ -87,3 +72,7 @@ $ pnpm release:patch
 [npm-downloads-href]: https://npmjs.com/package/nuxt-phosphor-icons
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
+[playground-src]: https://codesandbox.io/static/img/play-codesandbox.svg
+[playground-href]: https://codesandbox.io/p/github/OyewoleOyedeji/nuxt-phosphor-icons/main?embed=1&file=%2Fplayground%2Fapp.vue&showConsole=true
+[vercel-src]: https://vercel.com/button
+[vercel-href]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOyewoleOyedeji%2Fnuxt-phosphor-icons
