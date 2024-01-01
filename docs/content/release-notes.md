@@ -5,6 +5,32 @@ description: Release notes for nuxt-phosphor-icons
 
 # Release Notes
 
+## v1.2.0
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.5...v1.2.0)
+
+### 🚀 Enhancements
+
+- Added jsdoc comments to module ([9fa48d4](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/9fa48d4))
+
+### 💅 Refactors
+
+- Moved prepare script to postinstall script ([cbe369a](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/cbe369a))
+- **docs:** Removed path attribute on <ContentDoc /> ([9cb313e](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/9cb313e))
+- **docs:** Added path attribute to <ContentDoc /> ([ecdf652](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/ecdf652))
+- Improved README ([8f52d31](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/8f52d31))
+- Removed unknown workspace folder ([0619e83](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/0619e83))
+
+### 🎨 Styles
+
+- **docs:** Added footer ([d1c8a8f](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/d1c8a8f))
+- **playground:** Refreshed look of module playground ([5f23323](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/5f23323))
+- **playground:** Added custom theming ([4661001](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/4661001))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.1.5
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.4...v1.1.5)
