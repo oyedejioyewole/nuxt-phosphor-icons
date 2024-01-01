@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import iconList from "#build/nuxt-phosphor-icons.mjs";
+import iconList from "#build/nuxt-phosphor-icons.json";
 import { pastelTheme, type NotivueTheme } from "notivue";
 
 const theme: NotivueTheme = {
@@ -81,7 +81,6 @@ async function copyToClipboard(text: string) {
         class="p-10 bg-accent-500 rounded-lg w-fit flex items-center"
         v-for="(icon, index) of displayedIcons"
         v-if="typeof displayedIcons === 'object' && displayedIcons.length > 1"
-        v-tooltip="`<${icon} />`"
         :key="index"
         @click="copyToClipboard(icon)"
       >
@@ -93,7 +92,6 @@ async function copyToClipboard(text: string) {
         v-else-if="
           typeof displayedIcons === 'object' && displayedIcons.length === 1
         "
-        v-tooltip="`<${displayedIcons[0]} />`"
         @click="copyToClipboard(displayedIcons[0])"
       >
         <component size="50" :is="displayedIcons[0]" />

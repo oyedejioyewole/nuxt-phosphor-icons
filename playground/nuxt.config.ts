@@ -1,9 +1,5 @@
 export default defineNuxtConfig({
-  css: [
-    "floating-vue/dist/style.css",
-    "notivue/animations.css",
-    "notivue/notifications.css",
-  ],
+  css: ["notivue/animations.css", "notivue/notifications.css"],
   devtools: { enabled: true },
   googleFonts: {
     families: {
@@ -14,7 +10,6 @@ export default defineNuxtConfig({
   },
   modules: [
     "../src/module",
-    "floating-vue/nuxt",
     "notivue/nuxt",
     "@formkit/auto-animate",
     "@nuxtjs/tailwindcss",
@@ -25,12 +20,9 @@ export default defineNuxtConfig({
     position: "bottom-center",
   },
   phosphor: {
+    expose: true,
     prefix: "nuxt-icon",
-    options: {
-      components: {
-        expose: true,
-      },
-    },
+    showList: true,
   },
   typescript: {
     shim: false,
