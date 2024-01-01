@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       preload: ["bash", "ts"],
     },
   },
-  css: ["floating-vue/dist/style.css"],
+  css: ["notivue/animations.css", "notivue/notifications.css"],
   devtools: { enabled: true },
   googleFonts: {
     families: {
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "floating-vue/nuxt",
+    "notivue/nuxt",
     "nuxt-og-image",
     "nuxt-phosphor-icons",
     "@formkit/auto-animate/nuxt",
@@ -25,6 +25,9 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
   ],
+  notivue: {
+    position: "bottom-center",
+  },
   phosphor: {
     expose: true,
     showList: true,

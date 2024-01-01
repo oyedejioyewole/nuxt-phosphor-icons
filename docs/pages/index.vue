@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { pastelTheme, type NotivueTheme } from "notivue";
+
 defineOgImageComponent(
   "Page",
   {
@@ -7,6 +9,13 @@ defineOgImageComponent(
   },
   { fonts: ["Lora:700", "Open Sans:400"] },
 );
+
+const theme: NotivueTheme = {
+  ...pastelTheme,
+  "--nv-success-accent": "#2d271d",
+  "--nv-success-bg": "#a5986a",
+  "--nv-success-fg": "#2d271d",
+};
 </script>
 
 <template>
@@ -18,6 +27,10 @@ defineOgImageComponent(
       path="/"
     />
   </main>
+
+  <Notivue v-slot="item">
+    <Notifications :item="item" :theme="theme" />
+  </Notivue>
 </template>
 
 <style lang="scss">

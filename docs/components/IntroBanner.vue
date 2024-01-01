@@ -2,7 +2,7 @@
 import iconList from "#build/nuxt-phosphor-icons.json";
 
 const icons = ref<string[]>([]);
-const { copied, copy } = useClipboard({ legacy: true });
+const { copy } = useClipboard({ legacy: true });
 
 icons.value = generateIconNames();
 
@@ -30,6 +30,11 @@ function generateIconNames() {
   }
 
   return generatedIcons;
+}
+
+async function copyToClipboard(text: string) {
+  await copy(text);
+  push.success("Copied!");
 }
 </script>
 
@@ -76,10 +81,9 @@ function generateIconNames() {
     <div class="flex flex-col justify-between gap-y-4 lg:flex-row">
       <button
         class="flex w-full items-center justify-center gap-x-2 rounded-lg bg-primary-500 py-3 text-sm text-copy-900 lg:w-3/4 lg:gap-x-4"
-        @click="copy(($event.target as HTMLElement).innerText)"
+        @click="copyToClipboard(($event.target as HTMLElement).innerText)"
       >
-        <LazyPhosphorIconCode size="25" v-if="!copied" />
-        <LazyPhosphorIconCheck size="25" v-else />
+        <LazyPhosphorIconCode size="25" />
         <code>pnpm add -D nuxt-phosphor-icons</code>
       </button>
 
