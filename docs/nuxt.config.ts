@@ -26,11 +26,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
   ],
   phosphor: {
-    options: {
-      components: {
-        expose: true,
-      },
-    },
+    expose: true,
+    showList: true,
   },
   routeRules: {
     "/**": { isr: true },

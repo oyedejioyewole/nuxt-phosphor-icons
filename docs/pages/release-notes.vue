@@ -2,7 +2,7 @@
 defineOgImageComponent(
   "Page",
   {
-    title: "Changelog",
+    title: "Release Notes",
     description: "Release notes",
   },
   { fonts: ["Lora:700", "Open Sans:400"] },
@@ -20,14 +20,14 @@ defineOgImageComponent(
     </div>
     <ContentDoc
       class="mx-auto min-h-screen w-[90%] space-y-8 lg:w-1/2"
-      id="changelog"
-      path="/changelog"
+      id="release-notes"
+      path="/release-notes"
     />
   </main>
 </template>
 
 <style lang="scss">
-#changelog {
+#release-notes {
   a {
     @apply text-accent-500 hover:underline;
   }

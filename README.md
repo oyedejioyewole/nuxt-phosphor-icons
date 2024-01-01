@@ -6,7 +6,7 @@
 
 Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nuxt](https://nuxt.com)
 
-- [📜 &nbsp;Changelog](https://nuxt-phosphor-icons.vercel.app/changelog)
+- [✨ &nbsp;Release Notes](https://nuxt-phosphor-icons.vercel.app/release-notes)
 - [🏀 Online playground](https://codesandbox.io/p/github/OyewoleOyedeji/nuxt-phosphor-icons/main?embed=1&file=%2Fplayground%2Fapp.vue&showConsole=true)
 - [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
 

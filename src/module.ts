@@ -3,19 +3,34 @@ import {
   addTemplate,
   createResolver,
   defineNuxtModule,
+  type AddComponentOptions,
 } from "@nuxt/kit";
 import { readdirSync } from "fs";
 import { join } from "path";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  prefix: string | boolean;
-  options: Partial<{
-    components: Partial<{
-      expose: boolean;
-      showList: boolean;
-    }>;
-  }>;
+  /**
+   * Enable to register components globally
+   *
+   * @default false
+   */
+  expose: boolean;
+
+  /**
+   * The prefix of the component names
+   *
+   * @default "phosphor-icon" or "PhosphorIcon"
+   */
+  prefix: string;
+
+  /**
+   * Enable to generate a virtual file with the list
+   * of registered components at `#build/nuxt-phosphor-icons.json`
+   *
+   * @default false
+   */
+  showList: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -28,87 +43,59 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    prefix: "PhosphorIcon",
-    options: {
-      components: {
-        showList: true,
-      },
-    },
+    expose: false,
+    prefix: "phosphor-icon",
+    showList: false,
   },
-  async setup({ prefix, options }) {
+  async setup(options) {
     const { resolvePath } = createResolver(import.meta.url);
 
-    const entrypoint = await resolvePath("@phosphor-icons/vue");
-    const iconsPath = join(entrypoint, "../icons");
+    const source = join(await resolvePath("@phosphor-icons/vue"), "../icons");
 
-    const components = readdirSync(iconsPath).filter((file) =>
+    const compatibleComponents = readdirSync(source).filter((file) =>
       file.endsWith(".vue.mjs"),
     );
 
-    const componentChunks = [] as Array<{
-      name: string;
-      filePath: string;
-      chunkName: string;
-    }>;
+    // Convert prefix to PascalCase
+    let _prefix: string;
+
+    if (options.prefix) {
+      if (options.prefix.includes("-"))
+        _prefix = options.prefix
+          .split("-")
+          .map((word) => word[0].toUpperCase() + word.slice(1))
+          .join("");
+      else
+        _prefix = options.prefix.at(0)?.toUpperCase() + options.prefix.slice(1);
+    }
 
     // Generate the component chunks
-    for (const component of components) {
-      let name = component.split(".").at(0);
+    const chunks = compatibleComponents.map((component) => {
+      const componentName = component
+        .replace(".vue.mjs", "")
+        .replace("Ph", _prefix);
 
-      if (!name) continue;
-
-      /**
-       * If prefix is true, use default prefix
-       * If prefix is string, use prefix, replacing dashes with PascalCase
-       * If prefix is false, remove prefix
-       */
-      if (prefix === true) {
-        name.replace("Ph", "PhosphorIcon");
-      } else if (typeof prefix === "string") {
-        if (prefix.includes("-")) {
-          name = name.replace(
-            "Ph",
-            prefix
-              .split("-")
-              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-              .join(""),
-          );
-        } else {
-          name = name.replace(
-            "Ph",
-            `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)}`,
-          );
-        }
-      } else {
-        name = name.replace("Ph", "");
-      }
-
-      componentChunks.push({
-        name,
-        filePath: join(iconsPath, component),
-        chunkName: `phosphor-icons/${component.split(".")[0].toLowerCase()}`,
-      });
-    }
+      return {
+        name: componentName,
+        filePath: join(source, component),
+        global: options.expose,
+      } satisfies AddComponentOptions;
+    });
 
     // Register the components
-    for (const { name, filePath, chunkName } of componentChunks) {
+    for (const chunk of chunks) {
       addComponent({
-        chunkName,
-        filePath,
-        global: options.components?.expose ?? false,
-        name,
+        ...chunk,
       });
     }
 
-    // Show registered components as a virtual file (advanced usage)
-    if (options.components?.showList)
+    // Register template .json file (advanced usage)
+    if (options.showList) {
       addTemplate({
+        filename: "nuxt-phosphor-icons.json",
+        getContents: () => JSON.stringify(chunks.map((chunk) => chunk.name)),
         write: true,
-        filename: "nuxt-phosphor-icons.mjs",
-        getContents: () =>
-          `export default ${JSON.stringify(
-            componentChunks.map(({ name }) => name),
-          )}`,
       });
+    }
   },
 });

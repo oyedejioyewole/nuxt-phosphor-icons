@@ -21,17 +21,17 @@
     "dist"
   ],
   "scripts": {
-    "lint": "eslint . --fix",
     "docs:build": "pnpm --filter docs build",
     "docs:dev": "pnpm --filter docs dev",
+    "lint": "eslint . --fix",
     "playground:build": "pnpm --filter playground build",
     "playground:dev": "pnpm --filter playground dev",
     "playground:generate": "pnpm --filter playground generate",
     "postinstall": "nuxt-module-build build --stub && nuxt-module-build prepare",
     "prepack": "nuxt-module-build build",
-    "release:major": "pnpm lint && pnpm prepack && changelogen --release --major --output docs/content/changelog.md && git push --follow-tags",
-    "release:minor": "pnpm lint && pnpm prepack && changelogen --release --minor --output docs/content/changelog.md && git push --follow-tags",
-    "release:patch": "pnpm lint && pnpm prepack && changelogen --release --patch --output docs/content/changelog.md && git push --follow-tags"
+    "release:major": "pnpm lint && pnpm prepack && changelogen --release --major --output docs/content/release-notes.md && git push --follow-tags",
+    "release:minor": "pnpm lint && pnpm prepack && changelogen --release --minor --output docs/content/release-notes.md && git push --follow-tags",
+    "release:patch": "pnpm lint && pnpm prepack && changelogen --release --patch --output docs/content/release-notes.md && git push --follow-tags"
   },
   "dependencies": {
     "@nuxt/kit": "^3.9.0",

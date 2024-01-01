@@ -62,9 +62,6 @@ importers:
       '@nuxt/content':
         specifier: ^2.10.0
         version: 2.10.0(nuxt@3.9.0)(rollup@3.29.4)(vue@3.4.3)
-      '@nuxt/devtools':
-        specifier: latest
-        version: 1.0.6(nuxt@3.9.0)(rollup@3.29.4)(vite@5.0.10)
       '@nuxtjs/google-fonts':
         specifier: ^3.1.3
         version: 3.1.3(rollup@3.29.4)

@@ -41,70 +41,45 @@ You can configure the module using the `phosphor` key in the `nuxt.config.ts`
 
 <br>
 
+#### `expose`
+
+1. **Default**: `false`
+2. **Description**: Enable to register components globally
+3. **Type**: `Boolean`
+
+```ts
+export default defineNuxtConfig({
+  phosphor: {
+    expose: true,
+  },
+});
+```
+
+<br>
+
 #### `prefix`
 
-1. **Default:** `PhosphorIcon`
-2. **Description:** What should be prefixed to the icon components
-3. **Type:** `String` or `Boolean`
+1. **Default:** `phosphor-icon` or `PhosphorIcon`
+2. **Description:** The prefix of the component names
+3. **Type:** `String`
 
 ```ts
 export default defineNuxtConfig({
   phosphor: {
-    prefix: "your-prefix", // <YourPrefix.IconName />
+    prefix: "your-prefix", // or YourPrefix
   },
 });
 ```
 
-**PS:** Please ignore the `.`
-
-**Note:** When using type `Boolean`, if set to `true` the prefix would be the default value, otherwise if set to `false` there won't be a prefix.
-
-Also note, if you have a multi word prefix, you should include a dash (-) between the words
+**Note**: if you have a multi word prefix, you should include a &mdash; between the words
 
 <br>
 
-#### `options`
-
-1. **Default:** `{}`
-2. **Description:** Options to pass to the `@phosphor-icons/vue` module
-
-```ts
-export default defineNuxtConfig({
-  phosphor: {
-    options: {
-      components: {
-        expose: true,
-        showList: false,
-      },
-    },
-  },
-});
-```
-
-<br>
-
-#### `options.components`
-
-1. **Default:** `{}`
-2. **Description:** Configure how the components are registered
-3. **Type:** `Object`
-
-<br>
-
-#### `options.components.expose`
-
-1. **Default:** `false`
-2. **Description:** Whether to expose the components globally
-3. **Type:** `Boolean`
-
-**Note:** When set to `true` the components will be exposed globally (in turn leading to a larger bundle size), otherwise they will be exposed in the `components` key of the `nuxtContext`
-
-<br>
-
-#### `options.components.showList`
+#### `showList`
 
 1. **Default:** `true`
-2. **Description:** Whether to create a virtual file containing a list of all the available icons
-3. **Type:** `Boolean`
+2. **Description:** Enable to generate a virtual file with the list of registered components at
 
-**Note:** If enabled, the virtual file will be available for import at `#build/nuxt-phosphor-icons.mjs`
+   `#build/nuxt-phosphor-icons.json`
+
+3. **Type:** `Boolean`
