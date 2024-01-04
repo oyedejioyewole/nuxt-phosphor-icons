@@ -47,7 +47,7 @@ async function copyToClipboard(text: string) {
 
 <template>
   <div
-    class="grid grid-rows-2 lg:grid-cols-2 content-center min-h-screen mx-auto w-[90%] gap-x-10"
+    class="grid grid-rows-2 lg:grid-cols-2 content-center min-h-screen mx-auto w-[90%] gap-x-10 py-20"
   >
     <div class="space-y-10 flex flex-col justify-center">
       <h1 class="font-serif text-5xl text-primary-900">Playground</h1>
@@ -76,7 +76,7 @@ async function copyToClipboard(text: string) {
     </div>
 
     <div
-      class="grid grid-cols-2 md:grid-cols-4 place-items-center"
+      class="grid grid-cols-2 md:grid-cols-4 place-items-center gap-y-10"
       v-auto-animate
     >
       <button
