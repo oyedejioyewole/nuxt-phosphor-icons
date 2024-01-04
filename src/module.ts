@@ -14,6 +14,7 @@ export interface ModuleOptions {
    * Enable to register components globally
    *
    * @default false
+   * @link https://nuxt-phosphor-icons.vercel.app#expose
    */
   expose: boolean;
 
@@ -21,6 +22,7 @@ export interface ModuleOptions {
    * The prefix of the component names
    *
    * @default "phosphor-icon" or "PhosphorIcon"
+   * @link https://nuxt-phosphor-icons.vercel.app#prefix
    */
   prefix: string;
 
@@ -29,6 +31,7 @@ export interface ModuleOptions {
    * of registered components at `#build/nuxt-phosphor-icons.json`
    *
    * @default false
+   * @link https://nuxt-phosphor-icons.vercel.app#showlist
    */
   showList: boolean;
 }

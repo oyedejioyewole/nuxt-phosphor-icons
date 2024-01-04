@@ -29,7 +29,7 @@ Follow the following steps to start using this module:
 
 Congratulations 🎉, you can now use any icon from `@phosphor-icon/vue` in your Nuxt project!
 
-Browse the available of icons [here](https://phosphoricons.com/)
+Browse the available of icons [here.](https://phosphoricons.com/)
 
 Before hurrying on now, lets go through some possible configuration you might want to do!
 
@@ -44,7 +44,7 @@ You can configure the module using the `phosphor` key in the `nuxt.config.ts`
 #### `expose`
 
 1. **Default**: `false`
-2. **Description**: Enable to register components globally
+2. **Description**: Enable to register components globally.
 3. **Type**: `Boolean`
 
 ```ts
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
 #### `prefix`
 
 1. **Default:** `phosphor-icon` or `PhosphorIcon`
-2. **Description:** The prefix of the component names
+2. **Description:** The prefix of the component names.
 3. **Type:** `String`
 
 ```ts
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
 });
 ```
 
-**Note**: if you have a multi word prefix, you should include a &mdash; between the words
+**Note**: if you have a multi word prefix, you should include a &mdash; between the words.
 
 <br>
 

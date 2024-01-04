@@ -71,8 +71,9 @@ function generateIcons() {
       <NuxtLink
         class="flex w-full items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-500 hover:text-primary-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
         to="/release-notes"
-        >Release Notes <LazyPhosphorIconArrowRight size="20"
-      /></NuxtLink>
+      >
+        Release Notes <LazyPhosphorIconArrowRight size="20" />
+      </NuxtLink>
     </div>
   </header>
 </template>
