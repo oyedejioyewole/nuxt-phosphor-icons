@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+//@ts-ignore
+import colors from "#build/tailwind.config/theme/accentColor";
 import { pastelTheme, type NotivueTheme } from "notivue";
 
 defineOgImageComponent(
@@ -12,9 +14,9 @@ defineOgImageComponent(
 
 const theme: NotivueTheme = {
   ...pastelTheme,
-  "--nv-success-accent": "#2d271d",
-  "--nv-success-bg": "#a5986a",
-  "--nv-success-fg": "#2d271d",
+  "--nv-success-accent": colors.primary[900],
+  "--nv-success-bg": colors.primary[300],
+  "--nv-success-fg": colors.primary[900],
 };
 </script>
 
@@ -36,11 +38,11 @@ const theme: NotivueTheme = {
 <style lang="scss">
 #documentation {
   a {
-    @apply text-accent-500 hover:underline;
+    @apply text-primary-500 hover:underline;
   }
 
   code {
-    @apply rounded-lg bg-accent-500 px-3 py-1 text-sm;
+    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm;
   }
 
   h1,
@@ -48,11 +50,11 @@ const theme: NotivueTheme = {
   h3,
   h4 {
     a {
-      @apply font-serif text-copy-900;
+      @apply font-serif text-primary-900;
     }
   }
   h1 {
-    @apply font-serif text-4xl text-copy-900 lg:text-6xl;
+    @apply font-serif text-4xl text-primary-900 lg:text-6xl;
   }
 
   h2 {
@@ -67,7 +69,7 @@ const theme: NotivueTheme = {
     @apply text-xl font-bold lg:text-2xl;
 
     code {
-      @apply rounded-lg bg-accent-500 p-3;
+      @apply rounded-lg bg-primary-500 p-3;
     }
   }
 
@@ -75,16 +77,16 @@ const theme: NotivueTheme = {
     @apply list-inside list-decimal space-y-8 text-lg;
 
     li {
-      @apply space-y-4 text-copy-900;
+      @apply space-y-4 text-primary-900;
     }
   }
 
   p {
-    @apply text-pretty text-lg leading-loose tracking-wide text-copy-900;
+    @apply text-pretty text-lg leading-loose tracking-wide text-primary-900;
   }
 
   pre {
-    @apply overflow-x-scroll rounded-lg bg-accent-900 p-5 text-sm lg:p-7;
+    @apply overflow-x-scroll rounded-lg bg-primary-900 p-5 text-sm lg:p-7;
 
     code {
       @apply rounded-none bg-transparent;
@@ -95,7 +97,7 @@ const theme: NotivueTheme = {
     @apply list-inside list-disc space-y-8 text-lg;
 
     li {
-      @apply space-y-4 text-copy-900;
+      @apply space-y-4 text-primary-900;
     }
   }
 }

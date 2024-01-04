@@ -3,7 +3,7 @@
     <slot />
 
     <footer class="mx-auto flex items-center justify-between py-10 lg:w-1/2">
-      <h1 class="text-lg tracking-wide text-copy-900">
+      <h1 class="text-lg tracking-wide text-primary-900">
         Made with 🧋 · Hosted on Vercel
       </h1>
 

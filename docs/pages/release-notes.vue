@@ -13,9 +13,10 @@ defineOgImageComponent(
   <main class="mx-auto min-h-screen w-[90%] space-y-20 py-20 lg:w-1/2">
     <NuxtLink
       to="/"
-      class="flex w-fit items-center gap-x-1 rounded-full border border-accent-500 p-3 text-accent-500 transition hover:bg-accent-500 hover:text-copy-900"
-      ><LazyPhosphorIconArrowLeft size="20" /> Go back</NuxtLink
+      class="flex w-fit items-center gap-x-1 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-500 hover:text-primary-900"
     >
+      <LazyPhosphorIconArrowLeft size="20" /> Go back
+    </NuxtLink>
     <ContentDoc class="space-y-8" id="release-notes" path="/release-notes" />
   </main>
 </template>
@@ -23,11 +24,11 @@ defineOgImageComponent(
 <style lang="scss">
 #release-notes {
   a {
-    @apply text-accent-500 hover:underline;
+    @apply text-primary-500 hover:underline;
   }
 
   code {
-    @apply rounded-lg bg-accent-500 px-3 py-1 text-sm;
+    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm;
   }
 
   h1,
@@ -35,11 +36,11 @@ defineOgImageComponent(
   h3,
   h4 {
     a {
-      @apply font-serif text-copy-900;
+      @apply font-serif text-primary-900;
     }
   }
   h1 {
-    @apply font-serif text-4xl text-copy-900 lg:text-6xl;
+    @apply font-serif text-4xl text-primary-900 lg:text-6xl;
   }
 
   h2 {
@@ -55,7 +56,7 @@ defineOgImageComponent(
   }
 
   p {
-    @apply text-pretty  text-lg leading-loose tracking-wide text-accent-900;
+    @apply text-pretty  text-lg leading-loose tracking-wide text-primary-900;
   }
 
   ul {

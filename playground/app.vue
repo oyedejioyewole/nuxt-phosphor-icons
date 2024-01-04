@@ -48,9 +48,9 @@ async function copyToClipboard(text: string) {
     class="grid grid-rows-2 lg:grid-cols-2 content-center min-h-screen mx-auto w-[90%] gap-x-10"
   >
     <div class="space-y-10 flex flex-col justify-center">
-      <h1 class="font-serif text-5xl text-copy-900">Playground</h1>
+      <h1 class="font-serif text-5xl text-primary-900">Playground</h1>
       <input
-        class="border-accent-500 border-2 w-full p-3 rounded-lg"
+        class="border-primary-500 border-2 w-full p-3 rounded-lg"
         placeholder="e.g. address-book"
         type="text"
         v-model="icon"
@@ -64,7 +64,7 @@ async function copyToClipboard(text: string) {
         <p class="text-lg">
           View available icons
           <NuxtLink
-            class="text-accent-500"
+            class="text-primary-500"
             target="_blank"
             to="https://phosphoricons.com"
             >here</NuxtLink
@@ -78,7 +78,7 @@ async function copyToClipboard(text: string) {
       v-auto-animate
     >
       <button
-        class="p-10 bg-accent-500 rounded-lg w-fit flex items-center"
+        class="p-10 bg-primary-500 rounded-lg w-fit flex items-center"
         v-for="(icon, index) of displayedIcons"
         v-if="typeof displayedIcons === 'object' && displayedIcons.length > 1"
         :key="index"
@@ -88,7 +88,7 @@ async function copyToClipboard(text: string) {
       </button>
 
       <button
-        class="p-10 bg-accent-500 rounded-lg mx-auto"
+        class="p-10 bg-primary-500 rounded-lg mx-auto"
         v-else-if="
           typeof displayedIcons === 'object' && displayedIcons.length === 1
         "

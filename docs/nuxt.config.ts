@@ -38,6 +38,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://nuxt-phosphor-icons.vercel.app",
   },
+  tailwindcss: { exposeConfig: true },
   typescript: {
     shim: false,
   },
