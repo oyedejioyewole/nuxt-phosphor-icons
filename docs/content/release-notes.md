@@ -5,6 +5,31 @@ description: Release notes for nuxt-phosphor-icons
 
 # Release Notes
 
+## v1.2.1
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.2.0...v1.2.1)
+
+### 🩹 Fixes
+
+- **docs:** Updated imports ([7a04290](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/7a04290))
+- **docs:** Added updated pnpm-lock.yaml ([411ea6d](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/411ea6d))
+- **docs:** Fixed hydration mismatch errors ([326d4c4](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/326d4c4))
+
+### 💅 Refactors
+
+- **docs:** Removed unused colors from tailwind.config ([788e2ec](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/788e2ec))
+- **playground:** Removed @nuxt/devtools ([ba382d3](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/ba382d3))
+- Added links to documentation in jsdoc ([7d6dd8c](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/7d6dd8c))
+
+### 🎨 Styles
+
+- **docs:** Switched out tooltips for toasts ([89926a5](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/89926a5))
+- **playground:** Switched tooltips for toasts ([a0616fd](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/a0616fd))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.2.0
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.1.5...v1.2.0)
