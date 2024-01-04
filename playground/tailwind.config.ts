@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       colors: tailwindcssPaletteGenerator({
-        colors: ["#b5ac83", "#0a100d"],
-        names: ["accent", "copy"],
+        colors: ["#3c402b"],
+        names: ["primary"],
       }),
       fontFamily: {
         mono: ["Courier Prime", "monospace"],

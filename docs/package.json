@@ -17,8 +17,8 @@
     "nuxt": "^3.9.0",
     "nuxt-og-image": "3.0.0-rc.12",
     "nuxt-phosphor-icons": "workspace:^",
-    "sass": "^1.69.6",
-    "vue": "^3.4.3",
+    "sass": "^1.69.7",
+    "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },
   "optionalDependencies": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@bobthered/tailwindcss-palette-generator": "^3.2.3",
-    "notivue": "^2.0.1"
+    "notivue": "^2.1.1"
   }
 }

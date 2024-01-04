@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     prefix: "nuxt-icon",
     showList: true,
   },
+  tailwindcss: {
+    exposeConfig: true,
+  },
   typescript: {
     shim: false,
   },

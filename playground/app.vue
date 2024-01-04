@@ -1,12 +1,14 @@
 <script lang="ts" setup>
+//@ts-ignore
 import iconList from "#build/nuxt-phosphor-icons.json";
+import colors from "#build/tailwind.config/theme/accentColor";
 import { pastelTheme, type NotivueTheme } from "notivue";
 
 const theme: NotivueTheme = {
   ...pastelTheme,
-  "--nv-success-accent": "#2d271d",
-  "--nv-success-bg": "#a5986a",
-  "--nv-success-fg": "#2d271d",
+  "--nv-success-accent": colors.primary[900],
+  "--nv-success-bg": colors.primary[300],
+  "--nv-success-fg": colors.primary[900],
 };
 
 const icon = ref("");
