@@ -7,7 +7,7 @@
 Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nuxt](https://nuxt.com)
 
 - [✨ &nbsp;Release Notes](https://nuxt-phosphor-icons.vercel.app/release-notes)
-- [🏀 Online playground](https://codesandbox.io/p/github/OyewoleOyedeji/nuxt-phosphor-icons/main?embed=1&file=%2Fplayground%2Fapp.vue&showConsole=true)
+- [🏀 Online playground][playground-href]
 - [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
 
 ## Quick Setup
@@ -42,7 +42,7 @@ That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
 ## Contributing
 
-You can contribute to this module with CodeSandbox:
+You can contribute to this module with StackBlitz:
 
 [![Edit OyewoleOyedeji/nuxt-phosphor-icons/main][playground-src]][playground-href]
 
@@ -72,7 +72,7 @@ or locally for either
 [npm-downloads-href]: https://npmjs.com/package/nuxt-phosphor-icons
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
-[playground-src]: https://codesandbox.io/static/img/play-codesandbox.svg
-[playground-href]: https://codesandbox.io/p/github/OyewoleOyedeji/nuxt-phosphor-icons/main?embed=1&file=%2Fplayground%2Fapp.vue&showConsole=true
+[playground-src]: https://developer.stackblitz.com/img/open_in_stackblitz.svg
+[playground-href]: https://stackblitz.com/~/github.com/OyewoleOyedeji/nuxt-phosphor-icons
 [vercel-src]: https://vercel.com/button
 [vercel-href]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOyewoleOyedeji%2Fnuxt-phosphor-icons
