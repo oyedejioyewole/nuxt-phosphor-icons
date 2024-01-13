@@ -5,6 +5,27 @@ description: Release notes for nuxt-phosphor-icons
 
 # Release Notes
 
+## v1.2.2
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.2.1...v1.2.2)
+
+### 🩹 Fixes
+
+- Resolved postinstall issue ([e78d772](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/e78d772))
+
+### 🏡 Chore
+
+- **devDependencies:** Updated dependencies ([de20505](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/de20505))
+- **docs:** Bumped nuxt-og-image to 3.0.0-rc.21 ([d83173b](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/d83173b))
+
+### 🎨 Styles
+
+- **playground:** Fixed small screen styles ([f21ef6d](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/f21ef6d))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.2.1
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.2.0...v1.2.1)
