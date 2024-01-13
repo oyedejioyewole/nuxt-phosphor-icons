@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "postinstall": "nuxt prepare"
+    "dev": "nuxt dev"
   },
   "devDependencies": {
     "@formkit/auto-animate": "^0.8.1",
