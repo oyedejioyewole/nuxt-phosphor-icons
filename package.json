@@ -34,17 +34,17 @@
     "release:patch": "pnpm lint && pnpm prepack && changelogen --release --patch --output docs/content/release-notes.md && git push --follow-tags"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.9.1",
+    "@nuxt/kit": "^3.9.3",
     "@phosphor-icons/vue": "^2.1.6"
   },
   "devDependencies": {
     "@nuxt/devtools": "1.0.8",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/module-builder": "^0.5.5",
-    "@nuxt/schema": "^3.9.1",
-    "@types/node": "^20.11.0",
+    "@nuxt/schema": "^3.9.3",
+    "@types/node": "^20.11.9",
     "changelogen": "^0.5.5",
     "eslint": "^8.56.0",
-    "nuxt": "^3.9.1"
+    "nuxt": "^3.9.3"
   }
 }
