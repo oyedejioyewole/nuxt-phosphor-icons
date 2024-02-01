@@ -29,8 +29,8 @@ const toggleTheme = () => {
       <NuxtLink target="_blank" to="https://nuxt.com">
         <svg
           class="fill-primary-900 transition dark:fill-primary-100"
-          width="25"
           height="25"
+          width="25"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -46,11 +46,7 @@ const toggleTheme = () => {
       </NuxtLink>
 
       <!-- Theme switcher -->
-      <button
-        target="_blank"
-        to="https://phosphoricons.com"
-        @click="toggleTheme"
-      >
+      <button type="button" @click="toggleTheme">
         <component
           size="25"
           :is="

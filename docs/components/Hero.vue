@@ -2,13 +2,14 @@
 import iconList from "#build/nuxt-phosphor-icons.json";
 
 const { data: icons } = useAsyncData(async () => generateIcons());
-const { copy } = useClipboard({ legacy: true });
 
 useIntervalFn(async () => {
   const newIcons = generateIcons();
   await prefetchComponents(newIcons);
   icons.value = newIcons;
 }, 5000);
+
+const { copy } = useClipboard({ legacy: true });
 
 async function copyToClipboard(text: string) {
   await copy(text);

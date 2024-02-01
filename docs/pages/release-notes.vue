@@ -13,14 +13,13 @@ defineOgImageComponent(
   <div class="mx-auto space-y-20 py-20 lg:w-1/2">
     <!-- Go back -->
     <NuxtLink
-      to="/"
       class="group flex w-fit items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-400 hover:text-primary-950 dark:border-primary-600 dark:hover:bg-primary-600"
+      to="/"
     >
       <PhosphorIconArrowLeft
         class="transition group-hover:-translate-x-1"
         size="20"
       />
-
       Go back
     </NuxtLink>
 

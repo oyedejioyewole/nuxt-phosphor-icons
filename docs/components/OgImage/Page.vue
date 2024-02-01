@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineProps<{ title: string; description: string }>();
+defineProps<{ description: string; title: string }>();
 
 const shades = getColorShades("primary");
 </script>
@@ -16,9 +16,7 @@ const shades = getColorShades("primary");
           background:
             'linear-gradient(45deg, ' + shades[500] + ', ' + shades[800] + ')',
         }"
-      >
-        <PhosphorIconPhosphorLogo size="100" />
-      </div>
+      />
     </div>
   </div>
 </template>
