@@ -10,18 +10,17 @@ export default defineNuxtConfig({
   },
   modules: [
     "../src/module",
-    "notivue/nuxt",
     "@formkit/auto-animate",
-    "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
+    "notivue/nuxt",
   ],
   notivue: {
     position: "bottom-center",
   },
   phosphor: {
     expose: true,
-    prefix: "nuxt-icon",
     showList: true,
   },
   tailwindcss: {

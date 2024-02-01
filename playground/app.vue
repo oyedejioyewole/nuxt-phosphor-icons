@@ -1,18 +1,15 @@
 <script lang="ts" setup>
-//@ts-ignore
 import iconList from "#build/nuxt-phosphor-icons.json";
+//@ts-ignore
 import colors from "#build/tailwind.config/theme/accentColor";
 import { pastelTheme, type NotivueTheme } from "notivue";
 
-const theme: NotivueTheme = {
-  ...pastelTheme,
-  "--nv-success-accent": colors.primary[900],
-  "--nv-success-bg": colors.primary[300],
-  "--nv-success-fg": colors.primary[900],
-};
+useHead({
+  title: "Playground · nuxt-phosphor-icon",
+});
 
+const { copy: clipboardCopy } = useClipboard();
 const icon = ref("");
-const { copy } = useClipboard();
 
 const displayedIcons = computedAsync(async () => {
   let iconWithoutPrefix: string;
@@ -39,9 +36,33 @@ const displayedIcons = computedAsync(async () => {
   return icons;
 });
 
-async function copyToClipboard(text: string) {
-  await copy(`<${text} />`);
-  push.success("Copied!");
+/**
+ * This function copies `text` parameter to the clipboard
+ * @param text String
+ */
+
+async function useCopy(text: string) {
+  const template = `<${text} />`;
+
+  await clipboardCopy(template);
+  push.success(`${template} copied!`);
+}
+
+const shades = getColorShades("primary");
+const theme: NotivueTheme = {
+  ...pastelTheme,
+  "--nv-success-accent": shades[900],
+  "--nv-success-bg": shades[300],
+  "--nv-success-fg": shades[900],
+};
+
+/**
+ * This function gets the shades of the provided color
+ * from the `#build/tailwind.config` virtual file
+ */
+
+function getColorShades(name: string) {
+  return colors[name] as { [shade: number]: string };
 }
 </script>
 
@@ -66,7 +87,7 @@ async function copyToClipboard(text: string) {
         <p class="text-lg">
           View available icons
           <NuxtLink
-            class="text-primary-500"
+            class="text-primary-500 font-bold"
             target="_blank"
             to="https://phosphoricons.com"
             >here</NuxtLink
@@ -84,7 +105,7 @@ async function copyToClipboard(text: string) {
         v-for="(icon, index) of displayedIcons"
         v-if="typeof displayedIcons === 'object' && displayedIcons.length > 1"
         :key="index"
-        @click="copyToClipboard(icon)"
+        @click="useCopy(icon)"
       >
         <component size="50" :is="icon" />
       </button>
@@ -94,7 +115,7 @@ async function copyToClipboard(text: string) {
         v-else-if="
           typeof displayedIcons === 'object' && displayedIcons.length === 1
         "
-        @click="copyToClipboard(displayedIcons[0])"
+        @click="useCopy(displayedIcons[0])"
       >
         <component size="50" :is="displayedIcons[0]" />
       </button>
