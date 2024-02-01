@@ -5,6 +5,23 @@ description: Release notes for nuxt-phosphor-icons
 
 # Release Notes
 
+## v1.2.4
+
+[compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.2.3...v1.2.4)
+
+### 🚀 Enhancements
+
+- **docs:** Added theme switcher to footer ([29c965f](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/29c965f))
+- Enabled 'bundler' module resolution ([cc285e0](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/cc285e0))
+
+### 💅 Refactors
+
+- **playground:** ⚒️ Code maintenance ([7f439fb](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/commit/7f439fb))
+
+### ❤️ Contributors
+
+- OyewoleOyedeji
+
 ## v1.2.3
 
 [compare changes](https://github.com/OyewoleOyedeji/nuxt-phosphor-icons/compare/v1.2.2...v1.2.3)

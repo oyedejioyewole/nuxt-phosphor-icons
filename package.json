@@ -1,6 +1,6 @@
 {
   "name": "nuxt-phosphor-icons",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A simple wrapper for @phosphor-icons/vue in nuxt",
   "repository": {
     "type": "git",
