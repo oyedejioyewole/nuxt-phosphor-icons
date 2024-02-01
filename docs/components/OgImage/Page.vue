@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 defineProps<{ title: string; description: string }>();
+
+const shades = getColorShades("primary");
 </script>
 
 <template>
@@ -10,13 +12,10 @@ defineProps<{ title: string; description: string }>();
 
       <div
         class="absolute bottom-20 right-10 flex h-[200px] w-[200px] items-center justify-center rounded-full"
-        style="
-          background: linear-gradient(
-            315deg,
-            rgba(105, 112, 64, 1),
-            rgba(135, 142, 84, 0.6)
-          );
-        "
+        :style="{
+          background:
+            'linear-gradient(45deg, ' + shades[500] + ', ' + shades[800] + ')',
+        }"
       >
         <PhosphorIconPhosphorLogo size="100" />
       </div>

@@ -10,25 +10,38 @@ defineOgImageComponent(
 </script>
 
 <template>
-  <main class="mx-auto min-h-screen w-[90%] space-y-20 py-20 lg:w-1/2">
+  <div class="mx-auto space-y-20 py-20 lg:w-1/2">
+    <!-- Go back -->
     <NuxtLink
       to="/"
-      class="flex w-fit items-center gap-x-1 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-500 hover:text-primary-900"
+      class="group flex w-fit items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-400 hover:text-primary-950 dark:border-primary-600 dark:hover:bg-primary-600"
     >
-      <LazyPhosphorIconArrowLeft size="20" /> Go back
+      <PhosphorIconArrowLeft
+        class="transition group-hover:-translate-x-1"
+        size="20"
+      />
+
+      Go back
     </NuxtLink>
-    <ContentDoc class="space-y-8" id="release-notes" path="/release-notes" />
-  </main>
+
+    <!-- Release Notes -->
+    <ContentDoc
+      class="space-y-8"
+      id="release-notes"
+      path="/release-notes"
+      tag="section"
+    />
+  </div>
 </template>
 
 <style lang="scss">
 #release-notes {
   a {
-    @apply text-primary-500 hover:underline;
+    @apply font-bold text-primary-500 hover:underline;
   }
 
   code {
-    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm;
+    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm text-primary-950;
   }
 
   h1,
@@ -36,11 +49,11 @@ defineOgImageComponent(
   h3,
   h4 {
     a {
-      @apply font-serif text-primary-900;
+      @apply font-serif text-primary-950 dark:text-primary-100;
     }
   }
   h1 {
-    @apply font-serif text-4xl text-primary-900 lg:text-6xl;
+    @apply font-serif text-4xl lg:text-6xl;
   }
 
   h2 {
@@ -56,7 +69,7 @@ defineOgImageComponent(
   }
 
   p {
-    @apply text-pretty  text-lg leading-loose tracking-wide text-primary-900;
+    @apply text-pretty text-lg leading-loose tracking-wide;
   }
 
   ul {

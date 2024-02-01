@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  colorMode: { classSuffix: "" },
   content: {
     defaultLocale: "en-US",
     highlight: {
@@ -16,14 +17,15 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "notivue/nuxt",
-    "nuxt-og-image",
-    "nuxt-phosphor-icons",
     "@formkit/auto-animate/nuxt",
     "@nuxt/content",
+    "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
+    "notivue/nuxt",
+    "nuxt-og-image",
+    "nuxt-phosphor-icons",
   ],
   notivue: {
     position: "bottom-center",

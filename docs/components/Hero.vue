@@ -35,44 +35,47 @@ function generateIcons() {
 </script>
 
 <template>
-  <header
-    class="mx-auto grid h-screen w-[90%] place-content-center gap-y-20 lg:w-3/4"
-  >
-    <h1 class="font-serif text-5xl text-primary-900 lg:text-7xl">
-      <span class="text-primary-500">Phosphor Icons</span> meets
+  <header class="grid h-screen place-content-center gap-y-20">
+    <h1 class="text-center font-serif text-5xl lg:text-7xl">
+      <span class="text-primary-500">Phosphor Icons</span>
+      meets
       <span class="text-primary-500">Nuxt</span>
     </h1>
 
     <!-- Icon grid -->
     <div
-      class="will-change-content grid grid-cols-2 place-items-center gap-4 lg:grid-cols-4 lg:gap-x-4"
+      class="will-change-content grid grid-cols-2 place-items-center gap-y-10 md:grid-cols-4"
     >
       <div
-        class="rounded-lg bg-primary-300 p-10 lg:p-20"
+        class="rounded-lg bg-primary-300 p-10 dark:bg-primary-700 lg:p-20"
         v-auto-animate
         v-for="(icon, index) of icons"
         :key="index"
       >
-        <component :is="icon" size="50" />
+        <component size="50" :is="icon" />
       </div>
     </div>
 
     <div class="flex flex-col justify-between gap-y-4 lg:flex-row">
       <!-- Copy code -->
       <button
-        class="flex w-full items-center justify-center gap-x-2 rounded-lg bg-primary-400 py-3 text-sm text-primary-900 lg:w-3/4 lg:gap-x-4"
+        class="flex w-full items-center justify-center gap-x-2 rounded-lg bg-primary-400 py-3 text-sm dark:bg-primary-600 dark:text-primary-950 lg:w-3/4 lg:gap-x-4"
         @click="copyToClipboard(($event.target as HTMLElement).innerText)"
       >
-        <LazyPhosphorIconCode size="25" />
+        <PhosphorIconCopy size="20" />
         <code>pnpm add -D nuxt-phosphor-icons</code>
       </button>
 
       <!-- Go to release notes -->
       <NuxtLink
-        class="flex w-full items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-500 hover:text-primary-900 lg:w-[200px] lg:justify-around lg:gap-x-0"
+        class="group flex items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-400 hover:text-primary-950 dark:border-primary-600 dark:hover:bg-primary-600 lg:w-[200px]"
         to="/release-notes"
       >
-        Release Notes <LazyPhosphorIconArrowRight size="20" />
+        Release Notes
+        <PhosphorIconArrowRight
+          class="transition group-hover:translate-x-2"
+          size="20"
+        />
       </NuxtLink>
     </div>
   </header>
