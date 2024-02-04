@@ -13,7 +13,7 @@ defineOgImageComponent(
   <div class="mx-auto space-y-20 py-20 lg:w-1/2">
     <!-- Go back -->
     <NuxtLink
-      class="group flex w-fit items-center justify-center gap-x-2 rounded-full border border-primary-500 p-3 text-primary-500 transition hover:bg-primary-400 hover:text-primary-950 dark:border-primary-600 dark:hover:bg-primary-600"
+      class="backdop-blur-xl group flex w-fit items-center justify-center gap-x-2 rounded-full border border-primary-900 bg-primary-300/50 p-3 transition dark:border-primary-100 dark:bg-primary-700/50"
       to="/"
     >
       <PhosphorIconArrowLeft
@@ -36,11 +36,11 @@ defineOgImageComponent(
 <style lang="scss">
 #release-notes {
   a {
-    @apply font-bold text-primary-500 hover:underline;
+    @apply font-bold underline underline-offset-4;
   }
 
   code {
-    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm text-primary-950;
+    @apply rounded-lg bg-primary-500 px-3 py-1 text-sm text-primary-900;
   }
 
   h1,
@@ -48,7 +48,7 @@ defineOgImageComponent(
   h3,
   h4 {
     a {
-      @apply font-serif text-primary-950 dark:text-primary-100;
+      @apply font-serif no-underline;
     }
   }
   h1 {

@@ -49,6 +49,9 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(@nuxt/kit@3.10.0)(@nuxt/schema@3.10.0)
     optionalDependencies:
+      '@types/animejs':
+        specifier: ^3.1.12
+        version: 3.1.12
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
@@ -77,6 +80,9 @@ importers:
       '@vueuse/nuxt':
         specifier: ^10.7.2
         version: 10.7.2(nuxt@3.10.0)(rollup@3.29.4)(vue@3.4.15)
+      animejs:
+        specifier: ^3.2.2
+        version: 3.2.2
       nuxt:
         specifier: ^3.10.0
         version: 3.10.0(@types/node@20.11.16)(eslint@8.56.0)(rollup@3.29.4)(sass@1.70.0)(typescript@5.3.3)(vite@5.0.12)
@@ -2706,6 +2712,12 @@ packages:
       minimatch: 9.0.3
     dev: true
 
+  /@types/animejs@3.1.12:
+    resolution: {integrity: sha512-fpdH+ZtlO0kqjTOqRaBdsEmvpRNOayI8k4EVkEtitL5l6wducDOXk0rgQgfZqWf/ZX9DzXrHf257S5i9xTcISQ==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@types/debug@4.1.12:
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
     dependencies:
@@ -3698,6 +3710,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+    dev: true
+
+  /animejs@3.2.2:
+    resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
     dev: true
 
   /ansi-colors@4.1.3:

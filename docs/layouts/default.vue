@@ -4,8 +4,11 @@ const shades = getColorShades("primary");
 
 <template>
   <NuxtLoadingIndicator :color="shades[500]" />
-  <div class="mx-auto w-[90%]">
-    <main>
+
+  <div class="relative overflow-hidden">
+    <CursorFx />
+
+    <main class="mx-auto w-[90%]">
       <slot />
     </main>
 
