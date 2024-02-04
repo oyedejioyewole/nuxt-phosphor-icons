@@ -1,12 +1,8 @@
 <script lang="ts" setup>
-defineOgImageComponent(
-  "Page",
-  {
-    title: "Release Notes",
-    description: "Don't miss out on improvements and new features",
-  },
-  { fonts: ["Lora:700", "Open Sans:400"] },
-);
+defineOgImageComponent("Page", {
+  description: "Don't miss out on improvements and new features",
+  title: "Release Notes",
+});
 </script>
 
 <template>
