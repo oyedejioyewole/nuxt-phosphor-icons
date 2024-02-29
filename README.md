@@ -33,6 +33,20 @@ export default defineNuxtConfig({
 });
 ```
 
+3. Icon usage in your code
+```html
+<PhosphorIcon{ icon-name }/>
+```
+
+Example :-
+```html
+<!-- Phone icon -->
+<PhosphorIconPhone :size="32" color="#fafafa" weight="fill" />
+
+<!-- Envelope Simple icon -->
+<PhosphorIconEnvelopeSimple :size="32" color="#fafafa" weight="fill" />
+```
+
 That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
 
 ## Resources
