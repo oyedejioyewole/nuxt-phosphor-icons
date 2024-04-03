@@ -15,15 +15,7 @@ Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nu
 1. Add `nuxt-phosphor-icons` dependency to your project
 
    ```bash
-   # Using pnpm
    npx nuxi@latest module add nuxt-phosphor-icons
-
-   # Using yarn
-   npx nuxi@latest module add nuxt-phosphor-icons
-
-   # Using npm
-   npx nuxi@latest module add nuxt-phosphor-icons
-   ```
 
 2. Add `nuxt-phosphor-icons` to the `modules` section of `nuxt.config.ts`
 
