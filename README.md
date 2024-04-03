@@ -16,13 +16,13 @@ Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nu
 
    ```bash
    # Using pnpm
-   pnpm add -D nuxt-phosphor-icons
+   npx nuxi@latest module add nuxt-phosphor-icons
 
    # Using yarn
-   yarn add --dev nuxt-phosphor-icons
+   npx nuxi@latest module add nuxt-phosphor-icons
 
    # Using npm
-   npm install --save-dev nuxt-phosphor-icons
+   npx nuxi@latest module add nuxt-phosphor-icons
    ```
 
 2. Add `nuxt-phosphor-icons` to the `modules` section of `nuxt.config.ts`

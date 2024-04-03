@@ -62,7 +62,7 @@ function generateIcons() {
         @click="copyToClipboard(($event.target as HTMLElement).innerText)"
       >
         <PhosphorIconCopy size="20" />
-        <code>pnpm add -D nuxt-phosphor-icons</code>
+        <code>npx nuxi@latest module add nuxt-phosphor-icons
       </button>
 
       <!-- Go to release notes -->
