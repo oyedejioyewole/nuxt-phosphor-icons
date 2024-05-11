@@ -3,9 +3,8 @@ import {
   addTemplate,
   createResolver,
   defineNuxtModule,
-  type AddComponentOptions,
 } from "@nuxt/kit";
-import { readdirSync } from "fs";
+import { readdir } from "fs/promises";
 import { join } from "path";
 
 // Module options TypeScript interface definition
@@ -51,52 +50,44 @@ export default defineNuxtModule<ModuleOptions>({
     showList: false,
   },
   async setup(options) {
-    const { resolvePath } = createResolver(import.meta.url);
+    const { resolve, resolvePath } = createResolver(import.meta.url);
 
-    const source = join(await resolvePath("@phosphor-icons/vue"), "../icons");
+    const source = resolve(
+      await resolvePath("@phosphor-icons/vue"),
+      "../icons",
+    );
 
-    const compatibleComponents = readdirSync(source).filter((file) =>
+    const icons = await readdir(source);
+
+    const compatibleComponents = icons.filter((file) =>
       file.endsWith(".vue.mjs"),
     );
 
-    // Convert prefix to PascalCase
-    let _prefix: string;
-
-    if (options.prefix) {
-      if (options.prefix.includes("-"))
-        _prefix = options.prefix
+    const prefix = options.prefix.includes("-")
+      ? options.prefix
           .split("-")
-          .map((word) => word[0].toUpperCase() + word.slice(1))
-          .join("");
-      else
-        _prefix = options.prefix.at(0)?.toUpperCase() + options.prefix.slice(1);
-    }
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join("")
+      : options.prefix.charAt(0).toUpperCase() + options.prefix.slice(1);
 
-    // Generate the component chunks
-    const chunks = compatibleComponents.map((component) => {
-      const componentName = component
-        .replace(".vue.mjs", "")
-        .replace("Ph", _prefix);
+    const componentList: string[] = [];
 
-      return {
-        name: componentName,
+    for (const component of compatibleComponents) {
+      const name = component.replace(".vue.mjs", "").replace("Ph", prefix);
+
+      addComponent({
         filePath: join(source, component),
         global: options.expose,
-      } satisfies AddComponentOptions;
-    });
-
-    // Register the components
-    for (const chunk of chunks) {
-      addComponent({
-        ...chunk,
+        name,
       });
+
+      componentList.push(name);
     }
 
-    // Register template .json file (advanced usage)
     if (options.showList) {
       addTemplate({
         filename: "nuxt-phosphor-icons.json",
-        getContents: () => JSON.stringify(chunks.map((chunk) => chunk.name)),
+        getContents: () => JSON.stringify(componentList),
         write: true,
       });
     }
