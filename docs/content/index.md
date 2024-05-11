@@ -1,37 +1,18 @@
----
-title: Documentation · nuxt-phosphor-icons
-description: A simple wrapper for @phosphor-icons/vue in Nuxt
----
-
 # Documentation
 
-If you are reading this, I want to take a moment to thank you for trying out this module 😅
+:-P An easier way of using [@phosphor-icons/vue](https://phosphoricons.com) in your Nuxt project!
 
 ## Setup
 
-Follow the following steps to start using this module:
+Run the following command to install and add the module to your project:
 
-1. Add the `nuxt-phosphor-icons` module to your project as a `devDependency`
+```bash
+$ pnpm dlx nuxi@latest module add nuxt-phosphor-icons
+```
 
-   ```bash
-   $ pnpm add -D nuxt-phosphor-icons
-   ```
+**Aside**: I know I'm being preferential in my choice of package managers
 
-2. Add the module to the `modules` section of the `nuxt.config.ts`
-
-   ```ts
-   export default defineNuxtConfig({
-     devtools: { enabled: true },
-     modules: ["nuxt-phosphor-icons"],
-     phosphor: {}, // Override module options,
-   });
-   ```
-
-Congratulations 🎉, you can now use any icon from `@phosphor-icon/vue` in your Nuxt project!
-
-Browse the available of icons [here.](https://phosphoricons.com/)
-
-Before hurrying on now, lets go through some possible configuration you might want to do!
+Congratulations 🎉, you can now browse [@phosphor-icons/vue](https://phosphoricons.com) for icons to use in your project!
 
 ## Configuration
 
@@ -83,3 +64,11 @@ export default defineNuxtConfig({
    `#build/nuxt-phosphor-icons.json`
 
 3. **Type:** `Boolean`
+
+```ts
+export default defineNuxtConfig({
+  phosphor: {
+    showList: true,
+  },
+});
+```

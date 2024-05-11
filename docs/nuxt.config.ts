@@ -3,11 +3,13 @@ export default defineNuxtConfig({
   content: {
     defaultLocale: "en-US",
     highlight: {
-      theme: "one-dark-pro",
-      preload: ["bash", "ts"],
+      langs: ["bash", "ts"],
+      theme: {
+        dark: "github-dark",
+        default: "github-light",
+      },
     },
   },
-  css: ["notivue/animations.css", "notivue/notifications.css"],
   devtools: { enabled: true },
   googleFonts: {
     families: {
@@ -34,14 +36,8 @@ export default defineNuxtConfig({
     expose: true,
     showList: true,
   },
-  routeRules: {
-    "/**": { isr: true },
-  },
   site: {
     url: "https://nuxt-phosphor-icons.vercel.app",
   },
   tailwindcss: { exposeConfig: true },
-  typescript: {
-    shim: false,
-  },
 });
