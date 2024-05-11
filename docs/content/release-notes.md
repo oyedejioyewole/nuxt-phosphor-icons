@@ -4,6 +4,33 @@ description: Don't miss out on improvements and new features
 
 # Release Notes
 
+## v1.2.5
+
+[compare changes](https://github.com/oyedejioyewole/nuxt-phosphor-icons/compare/v1.2.4...v1.2.5)
+
+### 🩹 Fixes
+
+- **docs:** 🤓 Fixed empty background in og-image ([91e53b9](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/91e53b9))
+- **docs:** 🔨 Fixed display issues with og:image ([d10c951](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/d10c951))
+- Update on icon usage in readme ([86695cb](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/86695cb))
+
+### 💅 Refactors
+
+- **docs:** 👓 Order attributes alphabetically ([e6e8c07](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/e6e8c07))
+- 🖊 Updated package scripts ([e44819a](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/e44819a))
+
+### 🎨 Styles
+
+- **docs:** 🎨 Adopted a neumorphic design ([e03ed45](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/e03ed45))
+- **docs:** Improved documentation ✨ ([133f788](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/133f788))
+
+### ❤️ Contributors
+
+- Oyedejioyewole 
+- #ItsFOSS <oyedejioyewole@apx_managed.vanilla>
+- Nabil Akmal <nabil@runcloud.io>
+- OyewoleOyedeji
+
 ## v1.2.4
 
 [compare changes](https://github.com/oyedejioyewole/nuxt-phosphor-icons/compare/v1.2.3...v1.2.4)
