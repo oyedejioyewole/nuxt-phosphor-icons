@@ -9,15 +9,15 @@
     "preview": "nuxi preview"
   },
   "devDependencies": {
-    "@formkit/auto-animate": "^0.8.1",
-    "@nuxtjs/google-fonts": "^3.1.3",
-    "@nuxtjs/tailwindcss": "^6.11.2",
-    "@vueuse/core": "^10.7.2",
-    "@vueuse/nuxt": "^10.7.2",
-    "nuxt": "^3.10.0"
+    "@formkit/auto-animate": "^0.8.2",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@vueuse/core": "^10.10.0",
+    "@vueuse/nuxt": "^10.10.0",
+    "nuxt": "^3.11.2"
   },
   "dependencies": {
     "@bobthered/tailwindcss-palette-generator": "^3.2.3",
-    "notivue": "^2.2.0"
+    "notivue": "^2.4.4"
   }
 }

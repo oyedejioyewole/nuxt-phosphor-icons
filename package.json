@@ -28,22 +28,22 @@
     "playground:dev": "pnpm --filter playground dev",
     "playground:generate": "pnpm --filter playground generate",
     "prepack": "nuxt-module-build build",
-    "release:major": "pnpm prepack && changelogen --release --major --output docs/content/release-notes.md && git push --follow-tags && pnpm publish",
-    "release:minor": "pnpm prepack && changelogen --release --minor --output docs/content/release-notes.md && git push --follow-tags && pnpm publish",
-    "release:patch": "pnpm prepack && changelogen --release --patch --output docs/content/release-notes.md && git push --follow-tags && pnpm publish"
+    "release:major": "pnpm prepack && changelogen --release --major --output docs/content/release-notes.md && git push --follow-tags && npm publish",
+    "release:minor": "pnpm prepack && changelogen --release --minor --output docs/content/release-notes.md && git push --follow-tags && npm publish",
+    "release:patch": "pnpm prepack && changelogen --release --patch --output docs/content/release-notes.md && git push --follow-tags && npm publish"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.10.0",
-    "@phosphor-icons/vue": "^2.1.6"
+    "@nuxt/kit": "^3.11.2",
+    "@phosphor-icons/vue": "^2.2.1"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.0.8",
-    "@nuxt/eslint-config": "^0.2.0",
-    "@nuxt/module-builder": "^0.5.5",
-    "@nuxt/schema": "^3.10.0",
-    "@types/node": "^20.11.16",
+    "@nuxt/devtools": "1.3.2",
+    "@nuxt/eslint-config": "^0.3.13",
+    "@nuxt/module-builder": "^0.7.0",
+    "@nuxt/schema": "^3.11.2",
+    "@types/node": "^20.12.12",
     "changelogen": "^0.5.5",
-    "eslint": "^8.56.0",
-    "nuxt": "^3.10.0"
+    "eslint": "^9.3.0",
+    "nuxt": "^3.11.2"
   }
 }
