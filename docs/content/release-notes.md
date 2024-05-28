@@ -4,6 +4,18 @@ description: Don't miss out on improvements and new features
 
 # Release Notes
 
+## v1.3.0
+
+[compare changes](https://github.com/oyedejioyewole/nuxt-phosphor-icons/compare/v1.2.5...v1.3.0)
+
+### 🏡 Chore
+
+- Bumped @phosphor-icons/vue to 2.2.1 🔄 ([30cc5a5](https://github.com/oyedejioyewole/nuxt-phosphor-icons/commit/30cc5a5))
+
+### ❤️ Contributors
+
+- Oyedejioyewole ([@oyedejioyewole](http://github.com/oyedejioyewole))
+
 ## v1.2.5
 
 [compare changes](https://github.com/oyedejioyewole/nuxt-phosphor-icons/compare/v1.2.4...v1.2.5)
