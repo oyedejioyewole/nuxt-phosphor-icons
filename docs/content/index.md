@@ -1,74 +1,72 @@
-# Documentation
-
-:-P An easier way of using [@phosphor-icons/vue](https://phosphoricons.com) in your Nuxt project!
+---
+title: Documentation
+---
 
 ## Setup
 
-Run the following command to install and add the module to your project:
+Run the following command to add the module to your project:
 
-```bash
+```bash [>_]
 $ pnpm dlx nuxi@latest module add nuxt-phosphor-icons
 ```
 
-**Aside**: I know I'm being preferential in my choice of package managers
+Congratulations 🎉. You have successfully add the module to your project and can now browse [phosphoricons.com](https://phosphoricons.com){.font-cursive.underline.font-bold} for icons to use.
 
-Congratulations 🎉, you can now browse [@phosphor-icons/vue](https://phosphoricons.com) for icons to use in your project!
+## Usage
+
+```vue [YourComponent]
+<PhosphorIcon name="sun" />
+```
+
+**Note:** You can choose between `PascalCase` and `kebab-case` when using the component.
+
+This component also inherits all the props from the source components used in `@phosphor-icons/vue` meaning you can check them out [here](https://github.com/phosphor-icons/vue/tree/main#props){.font-cursive.font-bold.underline}
+
+If you're also interested in using the types provided by the module
+
+```ts
+import type { PhosphorIconName } from '#phosphor-icons/types'
+```
 
 ## Configuration
 
-You can configure the module using the `phosphor` key in the `nuxt.config.ts`
+You can configure the module using the `phosphorIcons` key in the `nuxt.config`
 
-### Options
+Select a key from the options below to see details specific to such key
 
-<br>
+::UiTabs{:tabs='["prefix", "showList"]'}
 
-#### `expose`
-
-1. **Default**: `false`
-2. **Description**: Enable to register components globally.
-3. **Type**: `Boolean`
-
-```ts
+#tab-1
+```ts [nuxt.config]
 export default defineNuxtConfig({
   phosphor: {
-    expose: true,
+    prefix: "phi",
   },
 });
 ```
 
-<br>
+**Default:** `phosphor-icon`
 
-#### `prefix`
+This key allows you to set the prefix for the component registered by the module.
 
-1. **Default:** `phosphor-icon` or `PhosphorIcon`
-2. **Description:** The prefix of the component names.
-3. **Type:** `String`
-
-```ts
-export default defineNuxtConfig({
-  phosphor: {
-    prefix: "your-prefix", // or YourPrefix
-  },
-});
-```
-
-**Note**: if you have a multi word prefix, you should include a &mdash; between the words.
-
-<br>
-
-#### `showList`
-
-1. **Default:** `true`
-2. **Description:** Enable to generate a virtual file with the list of registered components at
-
-   `#build/nuxt-phosphor-icons.json`
-
-3. **Type:** `Boolean`
-
-```ts
+#tab-2
+```ts [nuxt.config]
 export default defineNuxtConfig({
   phosphor: {
     showList: true,
   },
 });
 ```
+
+**Default:** `false`
+
+This key toggles whether a virtual file containing a list of all the icons would be registered.
+
+The snippet below shows how to use the virtual file:
+
+```vue
+<script lang="ts" setup>
+import iconList from '#phosphor-icons'
+</script>
+```
+::
