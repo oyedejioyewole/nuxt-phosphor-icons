@@ -4,50 +4,26 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Just a simple integration for [Phosphor Icons](https://phosphoricons.com) in [Nuxt](https://nuxt.com)
+An easier way of using [@phosphor-icons/vue](https://phosphoricons.com) in your [Nuxt](https://nuxt.com) project!
 
-- [✨ &nbsp;Release Notes](https://nuxt-phosphor-icons.vercel.app/release-notes)
 - [🏀 Online playground][playground-href]
 - [📖 &nbsp;Documentation](https://nuxt-phosphor-icons.vercel.app)
 
-## Quick Setup
+## Setup
 
-1. Add `nuxt-phosphor-icons` dependency to your project
+Run the following command to install and add the module to your project:
 
-   ```bash
-   # Using pnpm
-   pnpm add -D nuxt-phosphor-icons
-
-   # Using yarn
-   yarn add --dev nuxt-phosphor-icons
-
-   # Using npm
-   npm install --save-dev nuxt-phosphor-icons
-   ```
-
-2. Add `nuxt-phosphor-icons` to the `modules` section of `nuxt.config.ts`
-
-```js
-export default defineNuxtConfig({
-  modules: ["nuxt-phosphor-icons"],
-});
-```
-
-3. Icon usage in your code
-```html
-<PhosphorIcon{ icon-name }/>
-```
-
-Example :-
-```html
-<!-- Phone icon -->
-<PhosphorIconPhone :size="32" color="#fafafa" weight="fill" />
-
-<!-- Envelope Simple icon -->
-<PhosphorIconEnvelopeSimple :size="32" color="#fafafa" weight="fill" />
+```bash
+npx nuxi@latest module add nuxt-bootstrap-icons
 ```
 
 That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
+
+## Usage
+
+```vue
+<PhosphorIcon name="moon-stars" />
+```
 
 ## Resources
 
@@ -60,23 +36,18 @@ You can contribute to this module with StackBlitz:
 
 [![Edit OyewoleOyedeji/nuxt-phosphor-icons/main][playground-src]][playground-href]
 
-or locally for either
+or locally:
 
 ### Documentation
 
 1. Clone the repository
 2. Install dependencies with `pnpm install`
-3. Run development server with `pnpm docs:dev`
+3. Setup module for development with `pnpm dev:prepare`
+3. Run development server with `pnpm dev`
 
 **Note:** Hosted on Vercel
 
 [![Deploy with Vercel][vercel-src]][vercel-href]
-
-### Playground
-
-1. Clone the repository
-2. Install dependencies with `pnpm install`
-3. Run development server with `pnpm playground:dev`
 
 <!-- Badges -->
 
@@ -87,6 +58,6 @@ or locally for either
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
 [playground-src]: https://developer.stackblitz.com/img/open_in_stackblitz.svg
-[playground-href]: https://stackblitz.com/~/github.com/OyewoleOyedeji/nuxt-phosphor-icons
+[playground-href]: https://stackblitz.com/~/github.com/oyedejioyewole/nuxt-phosphor-icons
 [vercel-src]: https://vercel.com/button
 [vercel-href]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOyewoleOyedeji%2Fnuxt-phosphor-icons
