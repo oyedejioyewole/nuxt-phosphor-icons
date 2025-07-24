@@ -2,7 +2,8 @@ packages:
   - docs
 
 onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - "@tailwindcss/oxide"
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
   - better-sqlite3
   - esbuild
+  - unrs-resolver
