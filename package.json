@@ -10,40 +10,48 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare docs && nuxi prepare playground",
-    "docs:build": "pnpm --filter docs build",
-    "docs:dev": "pnpm --filter docs dev",
-    "playground:build": "pnpm --filter playground build",
-    "playground:dev": "pnpm --filter playground dev",
-    "playground:generate": "pnpm --filter playground generate",
+    "dev": "pnpm --filter docs dev",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare docs",
+    "lint": "eslint . --fix",
     "prepack": "nuxt-module-build build",
-    "release:major": "pnpm prepack && changelogen --release --major --output docs/content/release-notes.md && git push --follow-tags && npm publish",
-    "release:minor": "pnpm prepack && changelogen --release --minor --output docs/content/release-notes.md && git push --follow-tags && npm publish",
-    "release:patch": "pnpm prepack && changelogen --release --patch --output docs/content/release-notes.md && git push --follow-tags && npm publish"
+    "release": "pnpm test && changelogen --no-output --push --release",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.11.2",
-    "@phosphor-icons/vue": "^2.2.1"
+    "@phosphor-icons/vue": "^2.2.1",
+    "change-case": "^5.4.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.3.2",
-    "@nuxt/eslint-config": "^0.3.13",
-    "@nuxt/module-builder": "^0.7.0",
-    "@nuxt/schema": "^3.11.2",
-    "@types/node": "^20.12.12",
-    "changelogen": "^0.5.5",
-    "eslint": "^9.3.0",
-    "nuxt": "^3.11.2"
+    "@nuxt/devtools": "2.6.2",
+    "@nuxt/eslint-config": "^1.6.0",
+    "@nuxt/kit": "^4.0.0",
+    "@nuxt/module-builder": "^1.0.1",
+    "@nuxt/schema": "^4.0.0",
+    "@nuxt/test-utils": "^3.19.2",
+    "@types/node": "^24.0.15",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.31.0",
+    "nuxt": "^4.0.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.3"
   }
 }

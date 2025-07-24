@@ -1,3 +1,0 @@
-# (Experimental) Enable TypeScript bundler module resolution
-# https://www.typescriptlang.org/docs/handbook/modules/reference.html#bundler
-experimental.typescriptBundlerResolution=true

@@ -1,95 +1,80 @@
 import {
   addComponent,
   addTemplate,
+  addTypeTemplate,
   createResolver,
   defineNuxtModule,
-} from "@nuxt/kit";
-import { readdir } from "fs/promises";
-import { join } from "path";
+} from '@nuxt/kit'
+import { kebabCase } from 'change-case'
+import { readdirSync } from 'node:fs'
+import { dirname } from 'node:path'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
-   * Enable to register components globally
-   *
-   * @default false
-   * @link https://nuxt-phosphor-icons.vercel.app#expose
-   */
-  expose: boolean;
-
-  /**
    * The prefix of the component names
    *
-   * @default "phosphor-icon" or "PhosphorIcon"
-   * @link https://nuxt-phosphor-icons.vercel.app#prefix
+   * @default "phosphor-icon"
    */
-  prefix: string;
+  prefix: string
 
   /**
-   * Enable to generate a virtual file with the list
-   * of registered components at `#build/nuxt-phosphor-icons.json`
+   * This key toggles whether a virtual file containing a list of all the icons name should be registered.
+   * The virtual file can be imported from `#phosphor-icons`
    *
    * @default false
-   * @link https://nuxt-phosphor-icons.vercel.app#showlist
    */
-  showList: boolean;
+  showList: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: "nuxt-phosphor-icons",
-    configKey: "phosphor",
+    name: 'nuxt-phosphor-icons',
+    configKey: 'phosphorIcons',
     compatibility: {
-      nuxt: "^3.0.0",
+      nuxt: '>=3.0.0',
     },
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    expose: false,
-    prefix: "phosphor-icon",
+    prefix: 'phosphor-icon',
     showList: false,
   },
-  async setup(options) {
-    const { resolve, resolvePath } = createResolver(import.meta.url);
+  async setup(options, nuxt) {
+    const { resolve, resolvePath } = createResolver(import.meta.url)
 
     const source = resolve(
-      await resolvePath("@phosphor-icons/vue"),
-      "../icons",
-    );
+      dirname(await resolvePath('@phosphor-icons/vue')),
+      'icons',
+    )
 
-    const icons = await readdir(source);
+    const phosphorIcons = readdirSync(source).filter(icon => icon.endsWith('.vue.mjs')).map(icon => kebabCase(icon.split('.').at(0)?.substring(2) ?? ''))
 
-    const compatibleComponents = icons.filter((file) =>
-      file.endsWith(".vue.mjs"),
-    );
-
-    const prefix = options.prefix.includes("-")
-      ? options.prefix
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join("")
-      : options.prefix.charAt(0).toUpperCase() + options.prefix.slice(1);
-
-    const componentList: string[] = [];
-
-    for (const component of compatibleComponents) {
-      const name = component.replace(".vue.mjs", "").replace("Ph", prefix);
-
-      addComponent({
-        filePath: join(source, component),
-        global: options.expose,
-        name,
-      });
-
-      componentList.push(name);
-    }
+    addComponent({
+      filePath: resolve('./runtime/components/PhosphorIcon.vue'),
+      name: kebabCase(options.prefix),
+    })
 
     if (options.showList) {
-      addTemplate({
-        filename: "nuxt-phosphor-icons.json",
-        getContents: () => JSON.stringify(componentList),
+      const iconListTemplate = addTemplate({
+        filename: 'nuxt-phosphor-icons.json',
+        getContents: () => JSON.stringify(phosphorIcons),
         write: true,
-      });
+      })
+
+      // TODO: why are file extensions removed when alias has been registered?
+      nuxt.options.alias['#phosphor-icons'] = iconListTemplate.dst
     }
+
+    const typeTemplate = addTypeTemplate({
+      filename: 'types/nuxt-phosphor-icons.d.ts',
+      getContents: () => [
+        '// Provided by nuxt-phosphor-icons',
+        `export type PhosphorIconName = ${phosphorIcons.map(icon => `'${icon}'`).join(' | ')}`,
+      ].join('\n'),
+      write: true,
+    })
+
+    nuxt.options.alias['#phosphor-icons/types'] = typeTemplate.dst
   },
-});
+})
