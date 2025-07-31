@@ -1,5 +1,6 @@
 import {
   addComponent,
+  addImportsSources,
   addTemplate,
   addTypeTemplate,
   createResolver,
@@ -12,15 +13,14 @@ import { dirname } from 'node:path'
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
-   * The prefix of the component names
+   * This key allows you to set the prefix for the component registered by the module.
    *
    * @default "phosphor-icon"
    */
   prefix: string
 
   /**
-   * This key toggles whether a virtual file containing a list of all the icons name should be registered.
-   * The virtual file can be imported from `#phosphor-icons`
+   * This key toggles whether a virtual file containing a list of all the icons would be registered.
    *
    * @default false
    */
@@ -56,16 +56,18 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.showList) {
-      const iconListTemplate = addTemplate({
+      addTemplate({
         filename: 'nuxt-phosphor-icons.json',
         getContents: () => JSON.stringify(phosphorIcons),
         write: true,
       })
 
-      // TODO: why are file extensions removed when alias has been registered?
-      nuxt.options.alias['#phosphor-icons'] = iconListTemplate.dst
+      addImportsSources([
+        { from: resolve('./runtime/utils/icons.ts'), imports: ['getIconList'] },
+      ])
     }
 
+    // Create types containing all icons included in the @phosphor-icons/vue library.
     const typeTemplate = addTypeTemplate({
       filename: 'types/nuxt-phosphor-icons.d.ts',
       getContents: () => [
