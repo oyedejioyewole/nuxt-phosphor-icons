@@ -145,9 +145,9 @@ export default defineNuxtConfig({
 
 **Default:** `false`
 
-This key toggles whether a virtual file containing a list of all the icons would be registered.
+This key toggles whether a list containing all icons would be exported.
 
-The snippet below shows how to use the virtual file:
+The snippet below shows how to access the icons:
 
 ```vue
 <script lang="ts" setup>
