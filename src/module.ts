@@ -16,13 +16,15 @@ export interface ModuleOptions {
    * This key allows you to set the prefix for the component registered by the module.
    *
    * @default "phosphor-icon"
+   * @link https://nuxt-phosphor-icons.vercel.app
    */
   prefix: string
 
   /**
-   * This key toggles whether a virtual file containing a list of all the icons would be registered.
+   * This key toggles whether a virtual file containing a list of all icons with its utility function would be registered.
    *
    * @default false
+   * @link https://nuxt-phosphor-icons.vercel.app
    */
   showList: boolean
 }
