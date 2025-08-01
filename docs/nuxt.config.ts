@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
+    name: 'nuxt-phosphor-icons',
     url: 'https://nuxt-phosphor-icons.vercel.app',
   },
   colorMode: { classSuffix: '' },
@@ -40,6 +41,9 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2025-07-19',
+  ogImage: {
+    zeroRuntime: true,
+  },
   phosphorIcons: {
     showList: true,
   },
