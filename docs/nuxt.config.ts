@@ -40,6 +40,13 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2025-07-19',
+  ogImage: {
+    compatibility: {
+      prerender: {
+        chromium: false,
+      },
+    },
+  },
   phosphorIcons: {
     showList: true,
   },
