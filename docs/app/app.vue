@@ -12,7 +12,7 @@ useSeoMeta({
   description: data.value.description,
 })
 
-defineOgImageScreenshot()
+defineOgImageComponent('NuxtSeo', { theme: '#3c402b' })
 </script>
 
 <template>
