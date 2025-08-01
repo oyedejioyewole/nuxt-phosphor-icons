@@ -6,7 +6,7 @@ const activeTab = ref(1)
 
 <template>
   <div class="space-y-4">
-    <nav class="space-x-2">
+    <nav class="gap-2 flex flex-wrap">
       <button
         v-for="(tab, index) of $props.tabs"
         :key="tab"
@@ -24,6 +24,7 @@ const activeTab = ref(1)
     <div
       v-for="index in $props.tabs.length"
       :key="index"
+      v-auto-animate
       class="space-y-4"
     >
       <slot

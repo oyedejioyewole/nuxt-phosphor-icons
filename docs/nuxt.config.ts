@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    'nuxt-og-image',
     '../src/module',
   ],
   devtools: { enabled: true },
@@ -22,14 +23,17 @@ export default defineNuxtConfig({
       isCustomElement: tag => tag.startsWith('swiper-'),
     },
   },
+  site: {
+    url: 'https://nuxt-phosphor-icons.vercel.app',
+  },
   colorMode: { classSuffix: '' },
   content: {
     build: {
       markdown: {
         highlight: {
           theme: {
-            dark: 'github-dark',
-            default: 'github-light',
+            dark: 'vitesse-dark',
+            default: 'vitesse-light',
           },
         },
       },

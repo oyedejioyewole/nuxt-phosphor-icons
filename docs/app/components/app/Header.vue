@@ -2,8 +2,8 @@
 const features = [
   'Nuxt 3 ready.',
   'Typescript support.',
-  'An importable list of all icons in @phosphor-icons/vue.',
-  'Inherits all properties/slots of components from @phosphor-icons/vue.',
+  'Handy utility function for getting list of icons.',
+  'Fully compatibility with components from @phosphor-icons/vue.',
 ]
 </script>
 
@@ -40,8 +40,8 @@ const features = [
 
       <div class="flex flex-wrap gap-4">
         <UiButton
-          icon="book-open"
           to="#setup"
+          icon="book-open"
         >
           Get started
         </UiButton>

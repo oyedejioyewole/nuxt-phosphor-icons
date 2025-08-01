@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import iconList from '#phosphor-icons'
-import type { PhosphorIconName } from '#phosphor-icons/types'
-
-const pickIcons = (max: number) => (iconList.toSorted(() => Math.random() - 0.5).slice(0, max)) as PhosphorIconName[]
+const pickIcons = (max: number) => (getIconList().toSorted(() => Math.random() - 0.5).slice(0, max))
 
 const { data: icons, refresh } = await useAsyncData('icons', async () => {
   const parentArray = pickIcons(12)

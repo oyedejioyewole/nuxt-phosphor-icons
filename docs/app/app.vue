@@ -7,7 +7,12 @@ if (!data.value) throw createError({
   statusMessage: `Couldn't find page for ${route.path}`,
 })
 
-useHead({ title: data.value.title })
+useSeoMeta({
+  title: data.value.title,
+  description: data.value.description,
+})
+
+defineOgImageScreenshot()
 </script>
 
 <template>
