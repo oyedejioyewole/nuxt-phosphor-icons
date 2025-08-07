@@ -14,7 +14,7 @@ An easier way of using [@phosphor-icons/vue](https://phosphoricons.com) in your 
 Run the following command to install and add the module to your project:
 
 ```bash
-npx nuxi@latest module add nuxt-bootstrap-icons
+npx nuxi@latest module add nuxt-phosphor-icons
 ```
 
 That's it! You can now use `nuxt-phosphor-icons` in your Nuxt app ✨
