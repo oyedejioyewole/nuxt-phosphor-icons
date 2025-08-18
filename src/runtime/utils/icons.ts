@@ -1,5 +1,5 @@
 // @ts-expect-error Module resolution issues
-import iconList from '#build/nuxt-phosphor-icons.json'
+import iconMap from '#phosphor-icons/map'
 import type { PhosphorIconName } from '#phosphor-icons/types'
 
-export const getIconList = (): PhosphorIconName[] => iconList
+export const getIconList = () => Object.keys(iconMap) as PhosphorIconName[]

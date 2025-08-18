@@ -1,30 +1,36 @@
 <script lang="ts" setup>
-import { computed } from '#imports'
-import { pascalCase } from 'change-case'
-import type { PhosphorIconName } from '#phosphor-icons/types'
+import { computed, resolveComponent } from "#imports";
+import type { PhosphorIconName } from "#phosphor-icons/types";
+// @ts-expect-error Module resolution issues
+import iconMap from "#phosphor-icons/map";
 
-const phosphorIcons = await import('@phosphor-icons/vue')
+interface PhosphorIconProps {
+  name: Record<PhosphorIconName, boolean> | PhosphorIconName;
+  color?: string;
+  size?: string | number;
+  weight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone";
+  mirrored?: boolean;
+}
 
-const props = defineProps<{
-  name: Record<PhosphorIconName, boolean> | PhosphorIconName
-  color?: string
-  size?: string | number
-  weight?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone'
-  mirrored?: boolean }>()
+const { name, ...options } = defineProps<PhosphorIconProps>();
+const normalizedName = computed(() => {
+  switch (typeof name) {
+    case "object": {
+      return Object.keys(name)
+        .filter((key) => name[key])
+        .join("");
+    }
 
-const icon = computed(() => phosphorIcons[pascalCase(`ph-${typeof props.name === 'object'
-  ? Object.keys(props.name).filter(key => props.name[key]).join('')
-  : props.name}`) as keyof typeof phosphorIcons])
+    default:
+      return name;
+  }
+});
+
+const Icon = computed(() => resolveComponent(iconMap[normalizedName.value]));
 </script>
 
 <template>
-  <component
-    :is="icon"
-    :color="color"
-    :mirrored="mirrored"
-    :size="size"
-    :weight="weight"
-  >
+  <component :is="Icon" v-bind="options">
     <slot />
   </component>
 </template>

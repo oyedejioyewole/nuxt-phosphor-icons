@@ -1,12 +1,14 @@
 import {
   addComponent,
+  addComponentsDir,
   addImportsSources,
   addTemplate,
   addTypeTemplate,
   createResolver,
   defineNuxtModule,
+  useLogger
 } from '@nuxt/kit'
-import { kebabCase } from 'change-case'
+import { kebabCase, pascalCase } from 'change-case'
 import { readdirSync } from 'node:fs'
 import { dirname } from 'node:path'
 
@@ -40,45 +42,67 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     prefix: 'phosphor-icon',
-    showList: false,
+    showList: false
   },
   async setup(options, nuxt) {
-    const { resolve, resolvePath } = createResolver(import.meta.url)
+    const logger = useLogger('nuxt-phosphor-icons')
 
+    const { resolve, resolvePath } = createResolver(import.meta.url)
     const source = resolve(
       dirname(await resolvePath('@phosphor-icons/vue')),
       'icons',
     )
+    const phosphorIcons = readdirSync(source).filter(icon => icon.endsWith('vue.mjs')).map(icon => {
+      const filename = icon.split('.').at(0) ?? ''
+      return {
+         componentName: pascalCase(`${filename}-vue`), importName: filename, listName: kebabCase(filename.substring(2)), path: resolve(source, icon),
+      }
+    })
 
-    const phosphorIcons = readdirSync(source).filter(icon => icon.endsWith('.vue.mjs')).map(icon => kebabCase(icon.split('.').at(0)?.substring(2) ?? ''))
-
+    // Register the runtime component for accessing the icons.
     addComponent({
       filePath: resolve('./runtime/components/PhosphorIcon.vue'),
       name: kebabCase(options.prefix),
     })
 
-    if (options.showList) {
-      addTemplate({
-        filename: 'nuxt-phosphor-icons.json',
-        getContents: () => JSON.stringify(phosphorIcons),
-        write: true,
-      })
+    // Register the icons globally as asynchronous chunks
+    // (an icon would be loaded when requested).
+    addComponentsDir({
+      path: source,
+      isAsync: true,
+      global: true,
+      pattern: ['*.vue.mjs'],
+    })
 
-      addImportsSources([
-        { from: resolve('./runtime/utils/icons.ts'), imports: ['getIconList'] },
-      ])
-    }
+    // Register auto-imports for utility functions
+    addImportsSources([
+      { from: resolve('./runtime/utils/icons.ts'), imports: ['getIconList'] },
+    ])
 
-    // Create types containing all icons included in the @phosphor-icons/vue library.
+    // Register a map between an icon name and its registered component.
+    const template = addTemplate({
+      filename: 'nuxt-phosphor-icons.map.mjs',
+      getContents: () => [
+        '// Provided by nuxt-phosphor-icons',
+        'export default {',
+        phosphorIcons.map(icon => ` "${icon.listName}": "${icon.componentName}"`).join(',\n'),
+        '}',
+        ].join('\n'),
+      write: true,
+    })
+    nuxt.options.alias['#phosphor-icons/map'] = template.dst
+
+    logger.success(`${phosphorIcons.length} icons have been registered and mapped`)
+
+    // Register module types.
     const typeTemplate = addTypeTemplate({
       filename: 'types/nuxt-phosphor-icons.d.ts',
       getContents: () => [
         '// Provided by nuxt-phosphor-icons',
-        `export type PhosphorIconName = ${phosphorIcons.map(icon => `'${icon}'`).join(' | ')}`,
+        `export type PhosphorIconName = ${phosphorIcons.map(icon => `'${icon.listName}'`).join(' | ')}`,
       ].join('\n'),
       write: true,
     })
-
     nuxt.options.alias['#phosphor-icons/types'] = typeTemplate.dst
   },
 })
