@@ -3,3 +3,5 @@ import iconMap from '#phosphor-icons/map'
 import type { PhosphorIconName } from '#phosphor-icons/types'
 
 export const getIconList = () => Object.keys(iconMap) as PhosphorIconName[]
+
+export const getIconMap = (): Record<PhosphorIconName, string> => iconMap

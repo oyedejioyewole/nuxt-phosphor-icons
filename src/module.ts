@@ -20,15 +20,7 @@ export interface ModuleOptions {
    * @default "phosphor-icon"
    * @link https://nuxt-phosphor-icons.vercel.app
    */
-  prefix: string
-
-  /**
-   * This key toggles whether a virtual file containing a list of all icons with its utility function would be registered.
-   *
-   * @default false
-   * @link https://nuxt-phosphor-icons.vercel.app
-   */
-  showList: boolean
+  componentName: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -41,8 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    prefix: 'phosphor-icon',
-    showList: false
+    componentName: 'phosphor-icon',
   },
   async setup(options, nuxt) {
     const logger = useLogger('nuxt-phosphor-icons')
@@ -62,7 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Register the runtime component for accessing the icons.
     addComponent({
       filePath: resolve('./runtime/components/PhosphorIcon.vue'),
-      name: kebabCase(options.prefix),
+      name: kebabCase(options.componentName),
     })
 
     // Register the icons globally as asynchronous chunks
@@ -76,7 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Register auto-imports for utility functions
     addImportsSources([
-      { from: resolve('./runtime/utils/icons.ts'), imports: ['getIconList'] },
+      { from: resolve('./runtime/utils/icons.ts'), imports: ['getIconList', 'getIconMap'] },
     ])
 
     // Register a map between an icon name and its registered component.

@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { computed, resolveComponent } from "#imports";
 import type { PhosphorIconName } from "#phosphor-icons/types";
-// @ts-expect-error Module resolution issues
-import iconMap from "#phosphor-icons/map";
+import { getIconMap } from "../utils/icons";
 
 interface PhosphorIconProps {
   name: Record<PhosphorIconName, boolean> | PhosphorIconName;
@@ -13,12 +12,12 @@ interface PhosphorIconProps {
 }
 
 const { name, ...options } = defineProps<PhosphorIconProps>();
-const normalizedName = computed(() => {
+const normalizedName = computed((): PhosphorIconName => {
   switch (typeof name) {
     case "object": {
       return Object.keys(name)
         .filter((key) => name[key])
-        .join("");
+        .join("") as PhosphorIconName;
     }
 
     default:
@@ -26,7 +25,10 @@ const normalizedName = computed(() => {
   }
 });
 
-const Icon = computed(() => resolveComponent(iconMap[normalizedName.value]));
+const Icon = computed(() => {
+  const iconMap = getIconMap();
+  return resolveComponent(iconMap[normalizedName.value]);
+});
 </script>
 
 <template>
