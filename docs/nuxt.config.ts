@@ -1,33 +1,13 @@
 export default defineNuxtConfig({
-  modules: [
-    '@formkit/auto-animate/nuxt',
-    '@nuxt/content',
-    '@nuxt/fonts',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    '../src/module',
-  ],
-  devtools: { enabled: true },
-  app: {
-    head: {
-      titleTemplate: '%s · nuxt-phosphor-icons',
-      link: [
-        { rel: 'icon', href: './favicon.svg' },
-      ],
-    },
-  },
+  extends: [['github:oyedejioyewole/nuxt-pastel-docs', { install: true }]],
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('swiper-'),
     },
   },
   site: {
-    name: 'nuxt-phosphor-icons',
     url: 'https://nuxt-phosphor-icons.vercel.app',
   },
-  colorMode: { classSuffix: '' },
   content: {
     build: {
       markdown: {
@@ -39,12 +19,5 @@ export default defineNuxtConfig({
         },
       },
     },
-  },
-  compatibilityDate: '2025-07-19',
-  ogImage: {
-    zeroRuntime: true,
-  },
-  phosphorIcons: {
-    showList: true,
   },
 })
