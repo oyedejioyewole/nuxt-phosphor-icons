@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  extends: [['github:oyedejioyewole/nuxt-pastel-docs', { install: true }]],
+  extends: [import.meta.env.THEME_DIRECTORY ?? ['github:oyedejioyewole/nuxt-pastel-docs', { install: true }]],
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('swiper-'),
