@@ -46,7 +46,17 @@ You could also dynamically render an icon based on conditions, i.e;
 <PhosphorIcon :name="{ 'moon-stars': isLightModeToggled, 'sun': !isLightModeToggled }" />
 ```
 
-You could also extend the components utilizing the `<slot />` in this component allowing for custom attributes.
+It's preferrable if there is only one key-value pair that's truthy at all times, else the component uses `.find()` to get the first truthy match.
+
+**Note:** Doing this preloads all the keys of the `name` prop object (to load times faster).
+
+You could also extend the component with custom attributes utilizing the `<slot />` element provided within the runtime component.
+
+```vue [YourComponent]
+<PhosphorIcon name="moon-stars">
+  <style> /* Your styling goes here */ </style>
+</PhosphorIcon>
+```
 
 #tab-2
 Choose icon stroke/fill color. It can be any CSS color string, including **_hex, rgb, rgba, hsl, hsla, named colors,_**{.font-cursive} or the special **_currentColor_**{.font-cursive} variable.
