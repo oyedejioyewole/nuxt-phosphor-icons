@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  pastelDocsTheme: {
+  pastelDocs: {
     headline: 'Phosphor Icons meets Nuxt',
     repo: 'oyedejioyewole/nuxt-phosphor-icons',
     themeColor: '#3c402b',
