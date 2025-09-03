@@ -8,11 +8,11 @@ import {
   addTypeTemplate,
   createResolver,
   defineNuxtModule,
+  resolveFiles,
   useLogger,
 } from '@nuxt/kit'
 import { kebabCase, pascalCase } from 'change-case'
-import { readdir } from 'node:fs/promises'
-import { dirname } from 'node:path'
+import { dirname, parse } from 'node:path'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -56,12 +56,12 @@ export default defineNuxtModule<ModuleOptions>({
       'icons',
     )
 
-    // Filter through icons in `source` ending with `.vue.mjs`
-    // This ignores support for `.vue2.mjs` components
-    const phosphorIcons = (await readdir(source)).filter(icon => icon.endsWith('.vue.mjs')).map((icon) => {
-      const filename = icon.split('.').at(0) ?? ''
+    const phosphorIcons = (await resolveFiles(source, '*.vue.mjs')).map((filePath) => {
+      let { name: filename } = parse(filePath)
+      filename = filename.split('.').at(0) ?? ''
+
       return {
-        componentName: pascalCase(`${filename}-vue`), importName: filename, listName: kebabCase(filename.substring(2)), path: resolve(source, icon),
+        componentName: pascalCase(`${filename}-vue`), importName: filename, listName: kebabCase(filename.substring(2)), path: filePath,
       }
     })
 

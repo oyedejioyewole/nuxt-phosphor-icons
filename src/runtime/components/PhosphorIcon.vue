@@ -31,7 +31,7 @@ const Icon = computed(() => {
   const iconMapEntry = Object.entries(iconMap).find(([nameFromMap]) => nameFromMap === normalizedName.value)
 
   if (!iconMapEntry) {
-    console.warn(`${normalizedName.value} icon doesn't exist, would use a blank <svg> element instead`)
+    console.warn(`'${normalizedName.value}' icon doesn't exist, would use a blank <svg> element instead`)
     return 'svg'
   }
 
