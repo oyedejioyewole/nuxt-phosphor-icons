@@ -10,7 +10,7 @@ useSeoMeta({
 <template>
   <main>
     <AppHeader
-      right-slot-classes="grid max-lg:grid-rows-2 min-lg:grid-cols-3 gap-2.5 min-lg:h-[75vh] min-lg:aspect-[9/16] gap-x-4"
+      right-slot-classes="grid h-3/4 min-lg:h-[400px] gap-4 grid-cols-3"
     >
       <template #aside>
         <IconSlide />
