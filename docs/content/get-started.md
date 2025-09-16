@@ -1,8 +1,10 @@
 ---
-title: Get started
-description: This page would guide you through using this module.
 displayToc: true
 ---
+
+# Get started
+
+This page would guide you through using this module.
 
 ## Setup
 
@@ -25,15 +27,30 @@ I want to read about the
 ::UiTabs{:tabs='["component", "types", "utilities"]'}
 
 #tab-1
+
 ```vue [YourComponent]
 <PhosphorIcon name="sun" />
 ```
 
 You can use the props below to customize how the icon being rendered
 
-::UiTabs{:tabs='["name", "color", "size", "weight", "mirrored"]'}
+::UiTabs{:tabs='["color", "mirrored", "name", "size", "weight"]'}
 
 #tab-1
+Choose icon stroke/fill color. It can be any CSS color string, including **_hex, rgb, rgba, hsl, hsla, named colors,_**{.font-cursive} or the special **_currentColor_**{.font-cursive} variable.
+
+```vue
+<PhosphorIcon color="#eee" />
+```
+
+#tab-2
+Flip the icon horizontally. This can be useful in RTL languages where normal icon orientation is not appropriate.
+
+```vue
+<PhosphorIcon :mirrored="true" />
+```
+
+#tab-3
 Choose what icon to render. You can find them in the [icon library](https://phosphor-icons.com)
 
 ```vue [YourComponent]
@@ -43,7 +60,9 @@ Choose what icon to render. You can find them in the [icon library](https://phos
 You could also dynamically render an icon based on conditions, i.e;
 
 ```vue [YourComponent]
-<PhosphorIcon :name="{ 'moon-stars': isLightModeToggled, 'sun': !isLightModeToggled }" />
+<PhosphorIcon
+  :name="{ 'moon-stars': isLightModeToggled, sun: !isLightModeToggled }"
+/>
 ```
 
 It's preferrable if there is only one key-value pair that's truthy at all times, else the component uses `.find()` to get the first truthy match.
@@ -58,34 +77,20 @@ You could also extend the component with custom attributes utilizing the `<slot 
 </PhosphorIcon>
 ```
 
-#tab-2
-Choose icon stroke/fill color. It can be any CSS color string, including **_hex, rgb, rgba, hsl, hsla, named colors,_**{.font-cursive} or the special **_currentColor_**{.font-cursive} variable.
-
-```vue
-<PhosphorIcon color="#eee" />
-```
-
-#tab-3
+#tab-4
 Choose icon height & width. This can be a number, or a string with units in **_px, %, em, rem, pt, cm, mm, in_**{.font-cursive}.
 
 ```vue
 <PhosphorIcon size="24px" />
 ```
 
-#tab-4
+#tab-5
 Choose icon weight/style.
 
 **Options:** `"thin"` | `"light"` | `"regular"` | `"bold"` | `"fill"` | `"duotone"`
 
 ```vue
 <PhosphorIcon weight="duotone" />
-```
-
-#tab-5
-Flip the icon horizontally. This can be useful in RTL languages where normal icon orientation is not appropriate.
-
-```vue
-<PhosphorIcon :mirrored="true" />
 ```
 
 ::
@@ -95,7 +100,7 @@ Flip the icon horizontally. This can be useful in RTL languages where normal ico
 This modules exposes the following types during runtime
 
 ```ts
-import type { PhosphorIconName } from '#phosphor-icons/types'
+import type { PhosphorIconName } from "#phosphor-icons/types";
 ```
 
 #tab-3
@@ -109,9 +114,9 @@ This function returns an array of icons available in the [icon library](https://
 
 ```vue [YourComponent]
 <script lang="ts" setup>
-const icons = getIconList()
+const icons = getIconList();
 
-console.log(icons) // [ ... ]
+console.log(icons); // [ ... ]
 </script>
 ```
 
@@ -120,10 +125,10 @@ This function returns the icon map of registered icons to their runtime componen
 
 ```vue [YourComponent]
 <script lang="ts" setup>
-const iconMap = getIconMap() // { ... }
+const iconMap = getIconMap(); // { ... }
 
 // Usage
-const Icon = resolveComponent(iconMap['icon-name'])
+const Icon = resolveComponent(iconMap["icon-name"]);
 </script>
 ```
 
@@ -133,7 +138,7 @@ You do this using the [preloadComponents](https://nuxt.com/docs/4.x/api/utils/pr
 
 ```vue [YourComponent]
 <script lang="ts" setup>
-await preloadComponents(iconMap['icon-name'])
+await preloadComponents(iconMap["icon-name"]);
 </script>
 ```
 
@@ -142,7 +147,6 @@ await preloadComponents(iconMap['icon-name'])
 ::
 
 ::
-
 
 ## Configuration
 
